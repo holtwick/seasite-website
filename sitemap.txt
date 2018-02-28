@@ -1,0 +1,6 @@
+https://holtwick.github.io/seasite-website/
+https://holtwick.github.io/seasite-website/blog/
+https://holtwick.github.io/seasite-website/blog/static-jquery
+https://holtwick.github.io/seasite-website/docs
+https://holtwick.github.io/seasite-website/imprint
+https://holtwick.github.io/seasite-website/products

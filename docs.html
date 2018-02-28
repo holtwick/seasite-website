@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dirk Holtwick - Documentation of &quot;SeaSite&quot;</title>
+
+    <link href="/custom.css" rel="stylesheet" media="all">
+
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+    <link rel="icon" type="image/png" href="/img/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon-96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+
+    <link rel="alternate" type="application/rss+xml" title="Blog of Dirk Holtwick" href="/atom.xml">
+<link rel="canonical" href="https://holtwick.github.io/seasite-website/docs">
+<meta property="og:url" content="https://holtwick.github.io/seasite-website/docs">
+<meta property="og:title" content="Dirk Holtwick - Documentation of &quot;SeaSite&quot;">
+<meta name="twitter:creator" content="@holtwick">
+<meta name="twitter:card" content="summary">
+<meta name="generator" content="SeaSite, https://github.com/holtwick/seasite/">
+<meta property="og:type" content="website"></head>
+
+<body data-spy="scroll" data-target="#outline">
+
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand logo" href="/">
+                <img alt="Brand" src="/img/logo.png" height="28">
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav -navbar-right">
+                
+                <li data-group="index"><a href="/">SeaSite</a></li>
+                <li data-group="blog"><a href="/blog/">Blog</a></li>
+                <li data-group="product"><a href="/products">Products</a></li>
+                <li data-group="docs" class="active"><a href="/docs">Documentation</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+            <div class="post blog-post doc" id="content"><div><h1 class="blog-post-title">Documentation of &quot;SeaSite&quot;</h1><p><em>Author: Dirk Holtwick, <a href="https://holtwick.de">holtwick.de</a></em></p>
+<h2 id="outline-1"><a name="outline-1" class="anchor" href="#outline-1">Introduction</a></h2><p>The purpose of SeaSite is to provide an <strong>easy</strong> and <strong>cross platform consistent</strong> way to <strong>create websites</strong>. This is achieved by using common HTML and Javascript techniques, that are similar to those used for dynamic web pages.</p>
+<p>It all started with my own websites and an article I wrote in my blog about the technique I used: <a href="https://holtwick.de/blog/static-jquery">https://holtwick.de/blog/static-jquery</a></p>
+<h2 id="outline-2"><a name="outline-2" class="anchor" href="#outline-2">Getting Started</a></h2><p>The easiest way to get started is to install SeaSite globally:</p>
+<pre><code class="lang-sh">npm install seasite -g
+</code></pre>
+<p>This will install a command line tool called <code>seasite</code> that you can now use to setup a project in an empty folder:</p>
+<pre><code class="lang-sh">seasite init
+npm install
+</code></pre>
+<p>The following command will create the site in the folder <code>dist</code>:</p>
+<pre><code class="lang-sh">npm start
+</code></pre>
+<h2 id="outline-3"><a name="outline-3" class="anchor" href="#outline-3">Site</a></h2><p>The central piece of the engine is the <code>SeaSite</code> object. In the most simple setup a source and a destination folder will be defined. The first action that will happen is to close the destination to the source folder. All following actions will operate on this clone.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {SeaSite} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;seasite&apos;</span>
+
+<span class="hljs-keyword">let</span> site = <span class="hljs-keyword">new</span> SeaSite(
+        <span class="hljs-string">&apos;public&apos;</span>,  <span class="hljs-comment">// Source</span>
+        <span class="hljs-string">&apos;dist&apos;</span>)    <span class="hljs-comment">// Destination</span>
+</code></pre>
+<p>The third parameter will hold options:</p>
+<ul>
+<li><code>baseURL</code></li>
+<li><code>publicURL(path)</code>: Override for <a href="#publicURL"><code>site.publicURL()</code></a></li>
+</ul>
+<p>The <strong>path pattern</strong> (referred to as <code>pattern</code>) that is used in some of the following methods, can be either a simple string representing the full path, like <code>contact/index.html</code> or a regular expression like <code>.*\.md</code> which would retrieve all Markdown files, even those in sub directories. The last option is to pass an <code>Array</code> with string representations described before.</p>
+<h3 id="outline-4"><a name="outline-4" class="anchor" href="#outline-4">site.handle(pattern, fn)</a></h3><p>Make all files matching <code>pattern</code> go through <code>fn</code>. For HTML and XML files the parameters of <code>fn</code> will be <code>dom</code> and <code>path</code> otherwise just the content. Example:</p>
+<pre><code class="lang-js">site.handle(<span class="hljs-regexp">/.*\.html/</span>, ($, path) =&gt; {
+    $(<span class="hljs-string">&apos;title&apos;</span>).text(path)
+})
+</code></pre>
+<h3 id="outline-5"><a name="outline-5" class="anchor" href="#outline-5">site.copy(from, to)</a></h3><p>Copy file.</p>
+<h3 id="outline-6"><a name="outline-6" class="anchor" href="#outline-6">site.move(from, to)</a></h3><p>Move file.</p>
+<h3 id="outline-7"><a name="outline-7" class="anchor" href="#outline-7">site.remove(pattern)</a></h3><p>Remove files.</p>
+<h3 id="outline-8"><a name="outline-8" class="anchor" href="#outline-8">site.read(path)</a></h3><p>Read file at <code>path</code>. Result is of type Buffer.</p>
+<h3 id="outline-9"><a name="outline-9" class="anchor" href="#outline-9">site.write(path, data)</a></h3><p>Writes <code>data</code> to <code>path</code> overwriting existing files without asking for confirmation. <code>data</code> can be of type String, Buffer or <a href="#dom">DOM</a>.</p>
+<h3 id="outline-10"><a name="outline-10" class="anchor" href="#outline-10">site.paths(pattern):paths</a></h3><p>Returns all paths that match <code>pattern</code></p>
+<h3 id="outline-11"><a name="outline-11" class="anchor" href="#outline-11">site.url(path):url</a></h3><p>Converts a path to a local url with leading <code>/</code>.</p>
+<h3 id="publicURL"><a name="publicURL" class="anchor" href="#publicURL">site.publicURL(path):url </a></h3><p>Convert a <code>path</code> to a public URL that you e.g. would like to see as the canonical URL or in the sitemap. This should usually also include the scheme and host name. Example: <code>https://example.com/contact</code></p>
+<h2 id="dom"><a name="dom" class="anchor" href="#dom">DOM </a></h2><p>The real magic is in the jQuery like manipulation of the contents. <code>Cheerio</code> is used to provide the functionality. In SeaSite the <code>dom()</code> helper converts input like strings to a jQuery like DOM environment. It also adds some more functionalities, like support for <a href="#plugins">plugins</a>.</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">let</span> $ = dom(<span class="hljs-string">&apos;&lt;b&gt;Hello World&lt;/b&gt;&apos;</span>)
+$(b).text(<span class="hljs-string">&apos;Hallo Welt&apos;</span>)
+expect($.html()).toEqual(<span class="hljs-string">&apos;&lt;b&gt;Hallo Welt&lt;/b&gt;&apos;</span>)
+</code></pre>
+<h2 id="tasks"><a name="tasks" class="anchor" href="#tasks">Tasks </a></h2><p>These are solutions for common tasks. The first parameter is</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> task <span class="hljs-keyword">from</span> <span class="hljs-string">`seasite`</span>
+</code></pre>
+<h3 id="outline-12"><a name="outline-12" class="anchor" href="#outline-12">task.blog(site, options)</a></h3><pre><code class="lang-js">task.blog(site, {
+    template(site) {
+        <span class="hljs-keyword">return</span> site.read(<span class="hljs-string">&apos;blog/template.html&apos;</span>)
+    }
+})
+</code></pre>
+<h3 id="outline-13"><a name="outline-13" class="anchor" href="#outline-13">task.markdown(site, options)</a></h3><p>Converts all Markdown files ending on <code>.md</code> to HTML files. You can mix in templates and custom handlers.</p>
+<h3 id="outline-14"><a name="outline-14" class="anchor" href="#outline-14">task.sitemap(site, options)</a></h3><p>Creates a <code>sitemap.txt</code> file. Should be called after all other tasks are completed and templates etc. are removed. Can also be used to apply plugins to all HTML files, as a final step.</p>
+<p>Options:</p>
+<ul>
+<li><code>exclude</code>: List of patterns to exclude. Strings also match if they are at the beginning. For example <code>[&apos;private/&apos;]</code> will exclude all files in folder <code>private</code></li>
+<li><code>handler($, path)</code>: Will be called for each HTML file handled and not excluded.</li>
+</ul>
+<h2 id="plugins"><a name="plugins" class="anchor" href="#plugins">Plugins </a></h2><p>Plugins perform changes on a DOM object. They can be reused. Example:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> plugin <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;seasite&apos;</span>
+
+<span class="hljs-keyword">const</span> plugins = [
+    plugin.meta({
+        <span class="hljs-attr">twitter</span>: <span class="hljs-string">&apos;@holtwick&apos;</span>
+    }),
+    plugin.bestPractice()
+]
+
+$.applyPlugins(plugins, {
+    <span class="hljs-attr">title</span>: <span class="hljs-string">&apos;Hello World&apos;</span>
+})
+</code></pre>
+<h3 id="outline-15"><a name="outline-15" class="anchor" href="#outline-15">plugin.bestPractice()</a></h3><p>Make some changes to fit Google Lighthouse <em>best practice tests</em> better.</p>
+<h3 id="outline-16"><a name="outline-16" class="anchor" href="#outline-16">plugin.googleAnalytics(key)</a></h3><p>Add JS snippet that calls Google Analytics. It will respect <em>do not track</em> settings of the browser. Also supports <em>opt out</em>.</p>
+<h3 id="outline-17"><a name="outline-17" class="anchor" href="#outline-17">plugin.meta(opt)</a></h3><p>Apply various <code>meta</code> tags to improve SEO quality. TBD.</p>
+<h2 id="outline-18"><a name="outline-18" class="anchor" href="#outline-18">Appendix</a></h2><h3 id="outline-19"><a name="outline-19" class="anchor" href="#outline-19">License</a></h3><p>The project is licensed under GPLv3. If you need a commercial license, please get in <a href="https://holtwick.de/support">contact with me</a>.</p>
+</div></div>
+
+        </div>
+
+        <div class="col-sm-1">&#xA0;</div>
+        <div class="col-sm-3" id="sidebar"><nav id="outline" class="bs-docs-sidebar hidden-print hidden-sm hidden-xs" data-spy="affix" data-offset-top="68"><ul class="nav"><li><a href="#outline-1">Introduction</a></li><li><a href="#outline-2">Getting Started</a></li><li><a href="#outline-3">Site</a><ul class="nav"><li><a href="#outline-4">site.handle(pattern, fn)</a></li><li><a href="#outline-5">site.copy(from, to)</a></li><li><a href="#outline-6">site.move(from, to)</a></li><li><a href="#outline-7">site.remove(pattern)</a></li><li><a href="#outline-8">site.read(path)</a></li><li><a href="#outline-9">site.write(path, data)</a></li><li><a href="#outline-10">site.paths(pattern):paths</a></li><li><a href="#outline-11">site.url(path):url</a></li><li><a href="#publicURL">site.publicURL(path):url </a></li></ul>
+</li><li><a href="#dom">DOM </a></li><li><a href="#tasks">Tasks </a><ul class="nav"><li><a href="#outline-12">task.blog(site, options)</a></li><li><a href="#outline-13">task.markdown(site, options)</a></li><li><a href="#outline-14">task.sitemap(site, options)</a></li></ul>
+</li><li><a href="#plugins">Plugins </a><ul class="nav"><li><a href="#outline-15">plugin.bestPractice()</a></li><li><a href="#outline-16">plugin.googleAnalytics(key)</a></li><li><a href="#outline-17">plugin.meta(opt)</a></li></ul>
+</li><li><a href="#outline-18">Appendix</a><ul class="nav"><li><a href="#outline-19">License</a></li><a href="#top" class="back-to-top"> Back to top </a></ul></li></ul></nav></div>
+
+    </div>
+</div>
+
+<footer class="blog-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <hr>
+                <p>
+                    <a href="#top" class="pull-right">Back to top</a>
+                    <a href="/imprint">Imprint</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/lib.min.js" async></script>
+
+
+<script> 
+var disableStr = 'ga-disable-UA-261158-1';
+
+function gaOptout() {
+    document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+    window[disableStr] = true;
+    alert('Google Analytics tracking has been disabled.');
+}
+
+if (!((window.navigator && window.navigator['doNotTrack'] == 1) || (document.cookie && document.cookie.indexOf(disableStr + '=true') !== -1))) {    
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ 
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-261158-1', { 'anonymize_ip': true });
+    
+    var script = document.createElement('script');
+    script.setAttribute('async', 'async');
+    script.setAttribute('src', "https://www.googletagmanager.com/gtag/js?id=UA-261158-1")
+    document.body.appendChild(script)
+
+    console.log('Visit has been tracked by Google Analytics.');
+} else {
+    console.log('Visit has NOT been tracked by Google Analytics.');
+}
+</script></body></html>

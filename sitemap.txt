@@ -1,6 +1,6 @@
-https://holtwick.github.io/seasite-website/
-https://holtwick.github.io/seasite-website/blog/
-https://holtwick.github.io/seasite-website/blog/static-jquery
-https://holtwick.github.io/seasite-website/docs
-https://holtwick.github.io/seasite-website/imprint
-https://holtwick.github.io/seasite-website/products
+https://holtwick.github.io/seasite-website/seasite-website/blog/index.html
+https://holtwick.github.io/seasite-website/seasite-website/blog/static-jquery.html
+https://holtwick.github.io/seasite-website/seasite-website/docs.html
+https://holtwick.github.io/seasite-website/seasite-website/imprint.html
+https://holtwick.github.io/seasite-website/seasite-website/index.html
+https://holtwick.github.io/seasite-website/seasite-website/products.html

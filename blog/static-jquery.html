@@ -3,20 +3,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dirk Holtwick - Static websites the jQuery way</title>
+    <title>SeaSite - Static websites the jQuery way</title>
 
-    <link href="/custom.css" rel="stylesheet" media="all">
+    <link href="/seasite-website/custom.css" rel="stylesheet" media="all">
 
-    <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
-    <link rel="icon" type="image/png" href="/img/favicon-32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/img/favicon-96.png" sizes="96x96">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/seasite-website/img/favicon.png" type="image/png">
+    <link rel="icon" type="image/png" href="/seasite-website/img/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/seasite-website/img/favicon-96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="180x180" href="/seasite-website/img/apple-touch-icon.png">
 
-    <link rel="alternate" type="application/rss+xml" title="Blog of Dirk Holtwick" href="/atom.xml">
+    <link rel="alternate" type="application/rss+xml" title="Blog of Dirk Holtwick" href="/seasite-website/atom.xml">
 <meta name="keywords" property="og:keywords" content="jquery, website, static, cheerio, generator, nodejs, javascript, es6, seasite, server">
-<link rel="canonical" href="https://holtwick.github.io/seasite-website/blog/static-jquery">
-<meta property="og:url" content="https://holtwick.github.io/seasite-website/blog/static-jquery">
-<meta property="og:title" content="Dirk Holtwick - Static websites the jQuery way">
+<link rel="canonical" href="https://holtwick.github.io/seasite-website/seasite-website/blog/static-jquery.html">
+<meta property="og:url" content="https://holtwick.github.io/seasite-website/seasite-website/blog/static-jquery.html">
+<meta property="og:title" content="SeaSite - Static websites the jQuery way">
 <meta name="twitter:creator" content="@holtwick">
 <meta name="twitter:card" content="summary">
 <meta name="generator" content="SeaSite, https://github.com/holtwick/seasite/">
@@ -33,17 +33,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand logo" href="/">
-                <img alt="Brand" src="/img/logo.png" height="28">
+            <a class="navbar-brand logo" href="/seasite-website/index.html">
+                <img alt="Brand" src="/seasite-website/img/logo.png" height="28">
             </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav -navbar-right">
-                
-                <li data-group="index"><a href="/">SeaSite</a></li>
-                <li data-group="blog" class="active"><a href="/blog/">Blog</a></li>
-                <li data-group="product"><a href="/products">Products</a></li>
-                <li data-group="docs"><a href="/docs">Documentation</a></li>
+                <li data-group="index"><a href="/seasite-website/index.html">SeaSite</a></li>
+                <li data-group="blog" class="active"><a href="/seasite-website/blog/">Blog</a></li>
+                <li data-group="product"><a href="/seasite-website/products.html">Products</a></li>
+                <li data-group="docs"><a href="/seasite-website/docs.html">Documentation</a></li>
             </ul>
         </div>
     </div>
@@ -119,19 +118,14 @@ site.handle(<span class="hljs-string">&apos;index.html&apos;</span>, $ =&gt; {
 </code></pre>
 <p>We enhanced the previous example by collecting page info in the <code>pages</code> variable. After all Markdown pages are processed the links should be added to the <code>index.html</code> file. We use JSX to create a simple list with links. This is the same code you would use in a React JS project, but of course this is a custom JSX generator, which creates an HTML string form the JSX code.</p>
 <p>This way you don&apos;t need any complex templating language in the HTML file itself to get things done.</p>
-<h2>The technology</h2><p>All this is made possible by the awesome <a href="/blog/static-jquery.md">cheerio</a> project, which is driving the DOM and jQuery like part. The API is covering everything you&apos;ll need to manipulate the HTML and XML files.</p>
-<p>The rest is mostly custom code which I&apos;ll be happy to open source if there is interest. Drop me a line via the <a href="/support">support form</a> or at <a href="https://twitter.com/holtwick">Twitter</a>.</p>
+<h2>The technology</h2><p>All this is made possible by the awesome <a href="/seasite-website/blog/static-jquery.md">cheerio</a> project, which is driving the DOM and jQuery like part. The API is covering everything you&apos;ll need to manipulate the HTML and XML files.</p>
+<p>The rest is mostly custom code which I&apos;ll be happy to open source if there is interest. Drop me a line via the <a href="/seasite-website/support.html">support form</a> or at <a href="https://twitter.com/holtwick">Twitter</a>.</p>
 </div></div>
-
         </div>
 
         <div class="col-sm-1">&#xA0;</div>
         <div class="col-sm-3" id="sidebar">
             <div class="sidebar">
-                
-                
-                
-                
                 <div class="sidebar-module recent-posts" id="recent-posts-container">
                     <h4>Recent Posts</h4>
                     <ol class="list-unstyled" id="recent-posts"></ol>
@@ -143,12 +137,11 @@ site.handle(<span class="hljs-string">&apos;index.html&apos;</span>, $ =&gt; {
                         <li><a target="_blank" href="https://twitter.com/holtwick" rel="noopener">Twitter</a></li>
                         <li><a target="_blank" href="https://www.linkedin.com/in/holtwick/" rel="noopener">LinkedIn</a> /
                             <a target="_blank" href="https://www.xing.com/profile/Dirk_Holtwick/cv" rel="noopener">XING</a></li>
-                        <li><a target="_blank" href="/atom.xml" rel="noopener">RSS</a></li>
+                        <li><a target="_blank" href="/seasite-website/atom.xml" rel="noopener">RSS</a></li>
                     </ol>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -159,14 +152,14 @@ site.handle(<span class="hljs-string">&apos;index.html&apos;</span>, $ =&gt; {
                 <hr>
                 <p>
                     <a href="#top" class="pull-right">Back to top</a>
-                    <a href="/imprint">Imprint</a>
+                    <a href="/seasite-website/imprint.html">Imprint</a>
                 </p>
             </div>
         </div>
     </div>
 </footer>
 
-<script src="/lib.min.js" async></script>
+<script src="/seasite-website/lib.min.js" async></script>
 
 
 <script> 

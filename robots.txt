@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://holtwick.github.io/seasite-website/sitemap.txt
+Sitemap: https://holtwick.github.io/seasite-website/seasite-website/sitemap.txt

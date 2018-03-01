@@ -126,9 +126,20 @@ $.applyPlugins(plugins, {
     <span class="hljs-attr">title</span>: <span class="hljs-string">&apos;Hello World&apos;</span>
 })
 </code></pre>
-<h3 id="outline-15"><a name="outline-15" class="anchor" href="#outline-15">plugin.bestPractice()</a></h3><p>Make some changes to fit Google Lighthouse <em>best practice tests</em> better.</p>
+<h3 id="outline-15"><a name="outline-15" class="anchor" href="#outline-15">plugin.bestPractice()</a></h3><p>Make some changes to fit <strong><a href="https://developers.google.com/web/tools/lighthouse">Google Lighthouse</a></strong> <em>best practice tests</em> better.</p>
+<ul>
+<li><code>&lt;a target=&quot;_blank&quot;&gt;</code> will receive <code>rel=noopener</code> attribute. <a href="https://developers.google.com/web/tools/lighthouse/audits/noopener">More.</a></li>
+</ul>
 <h3 id="outline-16"><a name="outline-16" class="anchor" href="#outline-16">plugin.googleAnalytics(key)</a></h3><p>Add JS snippet that calls Google Analytics. It will respect <em>do not track</em> settings of the browser. Also supports <em>opt out</em>.</p>
 <h3 id="outline-17"><a name="outline-17" class="anchor" href="#outline-17">plugin.meta(opt)</a></h3><p>Apply various <code>meta</code> tags to improve SEO quality. TBD.</p>
+<ul>
+<li><code>title</code> will set <code>&lt;title&gt;</code> and <code>&lt;meta og:title&gt;</code></li>
+<li>...</li>
+</ul>
+<h3 id="plugin.img"><a name="plugin.img" class="anchor" href="#plugin.img">plugin.img(opt) </a></h3><p>Requires <code>opt.site</code> or <code>opt.basePath</code> to know about the base folder of the site. Optionally  <code>opt.path</code> can be passed to resolve relative links.</p>
+<p>The plugin collects all <code>img</code> elements and checks if the referred <code>src</code> file does exists. If <code>width</code> and <code>height</code> are missing, <code>width</code> will be set from the original image file. If the file name contains <code>@2x.</code> the half sizes will be used.</p>
+<p>If the <code>img</code> element is the only child of a <code>p</code> element, the class <code>img-wrapped</code> will be added to the <code>p</code> element.</p>
+<p><strong>Todo:</strong> Fill <code>srcset</code> with appropriate info.</p>
 <h2 id="outline-18"><a name="outline-18" class="anchor" href="#outline-18">Appendix</a></h2><h3 id="outline-19"><a name="outline-19" class="anchor" href="#outline-19">License</a></h3><p>The project is licensed under GPLv3. If you need a commercial license, please get in <a href="https://holtwick.de/support">contact with me</a>.</p>
 </div></div>
         </div>
@@ -136,7 +147,7 @@ $.applyPlugins(plugins, {
         <div class="col-sm-1">&#xA0;</div>
         <div class="col-sm-3" id="sidebar"><nav id="outline" class="bs-docs-sidebar hidden-print hidden-sm hidden-xs" data-spy="affix" data-offset-top="68"><ul class="nav"><li><a href="#outline-1">Introduction</a></li><li><a href="#outline-2">Getting Started</a></li><li><a href="#outline-3">Site</a><ul class="nav"><li><a href="#outline-4">site.handle(pattern, fn)</a></li><li><a href="#outline-5">site.copy(from, to)</a></li><li><a href="#outline-6">site.move(from, to)</a></li><li><a href="#outline-7">site.remove(pattern)</a></li><li><a href="#outline-8">site.read(path)</a></li><li><a href="#outline-9">site.write(path, data)</a></li><li><a href="#outline-10">site.paths(pattern):paths</a></li><li><a href="#outline-11">site.url(path):url</a></li><li><a href="#publicURL">site.publicURL(path):url </a></li></ul>
 </li><li><a href="#dom">DOM </a></li><li><a href="#tasks">Tasks </a><ul class="nav"><li><a href="#outline-12">task.blog(site, options)</a></li><li><a href="#outline-13">task.markdown(site, options)</a></li><li><a href="#outline-14">task.sitemap(site, options)</a></li></ul>
-</li><li><a href="#plugins">Plugins </a><ul class="nav"><li><a href="#outline-15">plugin.bestPractice()</a></li><li><a href="#outline-16">plugin.googleAnalytics(key)</a></li><li><a href="#outline-17">plugin.meta(opt)</a></li></ul>
+</li><li><a href="#plugins">Plugins </a><ul class="nav"><li><a href="#outline-15">plugin.bestPractice()</a></li><li><a href="#outline-16">plugin.googleAnalytics(key)</a></li><li><a href="#outline-17">plugin.meta(opt)</a></li><li><a href="#plugin.img">plugin.img(opt) </a></li></ul>
 </li><li><a href="#outline-18">Appendix</a><ul class="nav"><li><a href="#outline-19">License</a></li><a href="#top" class="back-to-top"> Back to top </a></ul></li></ul></nav></div>
     </div>
 </div>

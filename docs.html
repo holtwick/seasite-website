@@ -3,23 +3,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SeaSite - Documentation of &quot;SeaSite&quot;</title>
+    <title>Documentation of &quot;SeaSite&quot;</title>
 
-    <link href="/seasite-website/custom.css" rel="stylesheet" media="all">
+    <link href="/custom.css" rel="stylesheet" media="all">
 
-    <link rel="shortcut icon" href="/seasite-website/img/favicon.png" type="image/png">
-    <link rel="icon" type="image/png" href="/seasite-website/img/favicon-32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/seasite-website/img/favicon-96.png" sizes="96x96">
-    <link rel="apple-touch-icon" sizes="180x180" href="/seasite-website/img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+    <link rel="icon" type="image/png" href="/img/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon-96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
 
-    <link rel="alternate" type="application/rss+xml" title="Blog of Dirk Holtwick" href="/seasite-website/atom.xml">
-<link rel="canonical" href="https://holtwick.github.io/seasite-website/seasite-website/docs.html">
-<meta property="og:url" content="https://holtwick.github.io/seasite-website/seasite-website/docs.html">
-<meta property="og:title" content="SeaSite - Documentation of &quot;SeaSite&quot;">
-<meta name="twitter:creator" content="@holtwick">
-<meta name="twitter:card" content="summary">
-<meta name="generator" content="SeaSite, https://github.com/holtwick/seasite/">
-<meta property="og:type" content="website"></head>
+    <link rel="alternate" type="application/rss+xml" title="Blog of Dirk Holtwick" href="/atom.xml">
+<meta property="og:title" content="Documentation of &quot;SeaSite&quot;"><meta name="generator" content="SeaSite, https://github.com/holtwick/seasite/"><meta property="og:type" content="website"></head>
 
 <body data-spy="scroll" data-target="#outline">
 
@@ -32,16 +26,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand logo" href="/seasite-website/index.html">
-                <img alt="Brand" src="/seasite-website/img/logo.png" height="28">
+            <a class="navbar-brand logo" href="/index.html">
+                <img alt="Brand" src="/img/logo.png" height="28">
             </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav -navbar-right">
-                <li data-group="index"><a href="/seasite-website/index.html">SeaSite</a></li>
-                <li data-group="blog"><a href="/seasite-website/blog/">Blog</a></li>
-                <li data-group="product"><a href="/seasite-website/products.html">Examples</a></li>
-                <li data-group="docs" class="active"><a href="/seasite-website/docs.html">Documentation</a></li>
+                <li data-group="index"><a href="/index.html">SeaSite</a></li>
+                <li data-group="blog"><a href="/blog/">Blog</a></li>
+                <li data-group="product"><a href="/products.html">Examples</a></li>
+                <li data-group="docs" class="active"><a href="/docs.html">Documentation</a></li>
             </ul>
         </div>
     </div>
@@ -100,18 +94,33 @@ expect($.html()).toEqual(<span class="hljs-string">&apos;&lt;b&gt;Hallo Welt&lt;
 <h2 id="tasks"><a name="tasks" class="anchor" href="#tasks">Tasks </a></h2><p>These are solutions for common tasks. The first parameter is</p>
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> task <span class="hljs-keyword">from</span> <span class="hljs-string">`seasite`</span>
 </code></pre>
-<h3 id="outline-14"><a name="outline-14" class="anchor" href="#outline-14">task.blog(site, options)</a></h3><pre><code class="lang-js">task.blog(site, {
+<h3 id="taskhandle"><a name="taskhandle" class="anchor" href="#taskhandle">task.handle(site, options)  </a></h3><p>Walk through all files.</p>
+<p>Options:</p>
+<ul>
+<li><code>pattern</code>: Patterns to be included</li>
+<li><code>exclude</code>: Patterns to be excluded</li>
+<li><code>plugins</code>: Plugins to be applied if file is DOM compatible</li>
+<li><code>handler($, path)</code>: Will be called for each HTML file handled and not excluded.</li>
+</ul>
+<h3 id="outline-14"><a name="outline-14" class="anchor" href="#outline-14">task.html(site, options)</a></h3><p>Walk through all HTML files.</p>
+<p>Options:</p>
+<ul>
+<li><code>pattern</code>: Pattern is preset to filter files ending on <code>.html</code> or <code>.htm</code></li>
+<li>Other options as in <a href="#taskhandle">task.handle()</a></li>
+</ul>
+<h3 id="outline-15"><a name="outline-15" class="anchor" href="#outline-15">task.markdown(site, options)</a></h3><p>Converts all Markdown files ending on <code>.md</code> to HTML files. You can mix in templates and custom handlers.</p>
+<h3 id="outline-16"><a name="outline-16" class="anchor" href="#outline-16">task.blog(site, options)</a></h3><pre><code class="lang-js">task.blog(site, {
     template(site) {
         <span class="hljs-keyword">return</span> site.read(<span class="hljs-string">&apos;blog/template.html&apos;</span>)
     }
 })
 </code></pre>
-<h3 id="outline-15"><a name="outline-15" class="anchor" href="#outline-15">task.markdown(site, options)</a></h3><p>Converts all Markdown files ending on <code>.md</code> to HTML files. You can mix in templates and custom handlers.</p>
-<h3 id="outline-16"><a name="outline-16" class="anchor" href="#outline-16">task.sitemap(site, options)</a></h3><p>Creates a <code>sitemap.txt</code> file. Should be called after all other tasks are completed and templates etc. are removed. Can also be used to apply plugins to all HTML files, as a final step.</p>
+<h3 id="outline-17"><a name="outline-17" class="anchor" href="#outline-17">task.sitemap(site, options)</a></h3><p>Creates a <code>sitemap.txt</code> file. Should be called after all other tasks are completed and templates etc. are removed. </p>
 <p>Options:</p>
 <ul>
-<li><code>exclude</code>: List of patterns to exclude. Strings also match if they are at the beginning. For example <code>[&apos;private/&apos;]</code> will exclude all files in folder <code>private</code></li>
-<li><code>handler($, path)</code>: Will be called for each HTML file handled and not excluded.</li>
+<li><p><code>exclude</code>: List of patterns to exclude. Strings also match if they are at the beginning. For example <code>[&apos;private/&apos;]</code> will exclude all files in folder <code>private</code></p>
+<p>&#x200B;</p>
+</li>
 </ul>
 <h2 id="plugins"><a name="plugins" class="anchor" href="#plugins">Plugins </a></h2><p>Plugins perform changes on a DOM object. They can be reused. Example:</p>
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> plugin <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;seasite&apos;</span>
@@ -127,12 +136,12 @@ $.applyPlugins(plugins, {
     <span class="hljs-attr">title</span>: <span class="hljs-string">&apos;Hello World&apos;</span>
 })
 </code></pre>
-<h3 id="outline-17"><a name="outline-17" class="anchor" href="#outline-17">plugin.bestPractice()</a></h3><p>Make some changes to fit <strong><a href="https://developers.google.com/web/tools/lighthouse">Google Lighthouse</a></strong> <em>best practice tests</em> better.</p>
+<h3 id="outline-18"><a name="outline-18" class="anchor" href="#outline-18">plugin.bestPractice()</a></h3><p>Make some changes to fit <strong><a href="https://developers.google.com/web/tools/lighthouse">Google Lighthouse</a></strong> <em>best practice tests</em> better.</p>
 <ul>
 <li><code>&lt;a target=&quot;_blank&quot;&gt;</code> will receive <code>rel=noopener</code> attribute. <a href="https://developers.google.com/web/tools/lighthouse/audits/noopener">More.</a></li>
 </ul>
-<h3 id="outline-18"><a name="outline-18" class="anchor" href="#outline-18">plugin.googleAnalytics(key)</a></h3><p>Add JS snippet that calls Google Analytics. It will respect <em>do not track</em> settings of the browser. Also supports <em>opt out</em>.</p>
-<h3 id="outline-19"><a name="outline-19" class="anchor" href="#outline-19">plugin.meta(opt)</a></h3><p>Apply various <code>meta</code> tags to improve SEO quality. TBD.</p>
+<h3 id="outline-19"><a name="outline-19" class="anchor" href="#outline-19">plugin.googleAnalytics(key)</a></h3><p>Add JS snippet that calls Google Analytics. It will respect <em>do not track</em> settings of the browser. Also supports <em>opt out</em>.</p>
+<h3 id="outline-20"><a name="outline-20" class="anchor" href="#outline-20">plugin.meta(opt)</a></h3><p>Apply various <code>meta</code> tags to improve SEO quality. TBD.</p>
 <ul>
 <li><code>title</code> will set <code>&lt;title&gt;</code> and <code>&lt;meta og:title&gt;</code></li>
 <li>...</li>
@@ -141,15 +150,20 @@ $.applyPlugins(plugins, {
 <p>The plugin collects all <code>img</code> elements and checks if the referred <code>src</code> file does exists. If <code>width</code> and <code>height</code> are missing, <code>width</code> will be set from the original image file. If the file name contains <code>@2x.</code> the half sizes will be used.</p>
 <p>If the <code>img</code> element is the only child of a <code>p</code> element, the class <code>img-wrapped</code> will be added to the <code>p</code> element.</p>
 <p><strong>Todo:</strong> Fill <code>srcset</code> with appropriate info.</p>
-<h2 id="outline-20"><a name="outline-20" class="anchor" href="#outline-20">Appendix</a></h2><h3 id="outline-21"><a name="outline-21" class="anchor" href="#outline-21">License</a></h3><p>The project is licensed under GPLv3. If you need a commercial license, please get in <a href="https://holtwick.de/support">contact with me</a>.</p>
+<h3 id="outline-21"><a name="outline-21" class="anchor" href="#outline-21">More Plugins</a></h3><p>To be documented:</p>
+<ul>
+<li>plugin.href()</li>
+<li>plugin.tidy()</li>
+</ul>
+<h2 id="outline-22"><a name="outline-22" class="anchor" href="#outline-22">Appendix</a></h2><h3 id="outline-23"><a name="outline-23" class="anchor" href="#outline-23">License</a></h3><p>The project is licensed under GPLv3. If you need a commercial license, please get in <a href="https://holtwick.de/support">contact with me</a>.</p>
 </div></div>
         </div>
 
         <div class="col-sm-1">&#xA0;</div>
         <div class="col-sm-3" id="sidebar"><nav id="outline" class="bs-docs-sidebar hidden-print hidden-sm hidden-xs" data-spy="affix" data-offset-top="68"><ul class="nav"><li><a href="#outline-1">Introduction</a></li><li><a href="#outline-2">Getting Started</a></li><li><a href="#outline-3">Site</a><ul class="nav"><li><a href="#outline-4">Paths</a></li><li><a href="#outline-5">Patterns</a></li><li><a href="#outline-6">site.handle(pattern, fn)</a></li><li><a href="#outline-7">site.copy(from, to)</a></li><li><a href="#outline-8">site.move(from, to)</a></li><li><a href="#outline-9">site.remove(pattern)</a></li><li><a href="#outline-10">site.read(path)</a></li><li><a href="#outline-11">site.write(path, data)</a></li><li><a href="#outline-12">site.paths(pattern, excludePattern):paths</a></li><li><a href="#outline-13">site.url(path):url</a></li><li><a href="#publicURL">site.publicURL(path):url </a></li></ul>
-</li><li><a href="#dom">DOM </a></li><li><a href="#tasks">Tasks </a><ul class="nav"><li><a href="#outline-14">task.blog(site, options)</a></li><li><a href="#outline-15">task.markdown(site, options)</a></li><li><a href="#outline-16">task.sitemap(site, options)</a></li></ul>
-</li><li><a href="#plugins">Plugins </a><ul class="nav"><li><a href="#outline-17">plugin.bestPractice()</a></li><li><a href="#outline-18">plugin.googleAnalytics(key)</a></li><li><a href="#outline-19">plugin.meta(opt)</a></li><li><a href="#plugin.img">plugin.img(opt) </a></li></ul>
-</li><li><a href="#outline-20">Appendix</a><ul class="nav"><li><a href="#outline-21">License</a></li><a href="#top" class="back-to-top"> Back to top </a></ul></li></ul></nav></div>
+</li><li><a href="#dom">DOM </a></li><li><a href="#tasks">Tasks </a><ul class="nav"><li><a href="#taskhandle">task.handle(site, options)  </a></li><li><a href="#outline-14">task.html(site, options)</a></li><li><a href="#outline-15">task.markdown(site, options)</a></li><li><a href="#outline-16">task.blog(site, options)</a></li><li><a href="#outline-17">task.sitemap(site, options)</a></li></ul>
+</li><li><a href="#plugins">Plugins </a><ul class="nav"><li><a href="#outline-18">plugin.bestPractice()</a></li><li><a href="#outline-19">plugin.googleAnalytics(key)</a></li><li><a href="#outline-20">plugin.meta(opt)</a></li><li><a href="#plugin.img">plugin.img(opt) </a></li><li><a href="#outline-21">More Plugins</a></li></ul>
+</li><li><a href="#outline-22">Appendix</a><ul class="nav"><li><a href="#outline-23">License</a></li><a href="#top" class="back-to-top"> Back to top </a></ul></li></ul></nav></div>
     </div>
 </div>
 
@@ -160,40 +174,14 @@ $.applyPlugins(plugins, {
                 <hr>
                 <p>
                     <a href="#top" class="pull-right">Back to top</a>
-                    <a href="/seasite-website/imprint.html">Imprint</a>
+                    <a href="/imprint.html">Imprint</a>
                 </p>
             </div>
         </div>
     </div>
 </footer>
 
-<script src="/seasite-website/lib.min.js" async></script>
+<script src="/lib.min.js" async></script>
 
 
-<script> 
-var disableStr = 'ga-disable-UA-261158-1';
-
-function gaOptout() {
-    document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
-    window[disableStr] = true;
-    alert('Google Analytics tracking has been disabled.');
-}
-
-if (!((window.navigator && window.navigator['doNotTrack'] == 1) || (document.cookie && document.cookie.indexOf(disableStr + '=true') !== -1))) {    
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ 
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-261158-1', { 'anonymize_ip': true });
-    
-    var script = document.createElement('script');
-    script.setAttribute('async', 'async');
-    script.setAttribute('src', "https://www.googletagmanager.com/gtag/js?id=UA-261158-1")
-    document.body.appendChild(script)
-
-    console.log('Visit has been tracked by Google Analytics.');
-} else {
-    console.log('Visit has NOT been tracked by Google Analytics.');
-}
-</script></body></html>
+</body></html>

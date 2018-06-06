@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog</title><link>https://holtwick.github.io/seasite-website/</link><description>Blog of Dirk Holtwick</description><language>en-en</language><copyright>Dirk Holtwick</copyright><pubDate>2018-05-16T11:32:07+0200</pubDate><item><title>Static websites the jQuery way</title><link>https://holtwick.github.io/seasite-website/seasite-website/blog/static-jquery.html</link><pubDate>2017-12-30T16:00:00+0100</pubDate><author>Dirk Holtwick</author><description>&lt;p&gt;&lt;strong&gt;This blog and website consists of static pages created using a practical technique that I would like to introduce in this article.&lt;/strong&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog</title><link>https://holtwick.github.io/seasite-website/</link><description>Blog of Dirk Holtwick</description><language>en-en</language><copyright>Dirk Holtwick</copyright><pubDate>2018-06-06T10:21:04+0200</pubDate><item><title>Static websites the jQuery way</title><link>https://holtwick.github.io/seasite-website/seasite-website/blog/static-jquery.html</link><pubDate>2017-12-30T16:00:00+0100</pubDate><author>Dirk Holtwick</author><description>&lt;p&gt;&lt;strong&gt;This blog and website consists of static pages created using a practical technique that I would like to introduce in this article.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Update 2018-02-15:&lt;/strong&gt; The project described here can be &lt;a href=&quot;https://github.com/holtwick/seasite&quot;&gt;downloaded from GitHub&lt;/a&gt; now.&lt;/p&gt;
 &lt;p&gt;The special thing about this is that a large part of this website generator consists of programming patterns, which are also used in dynamic websites via jQuery. A simple example says more than a thousand words:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-js&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;const&lt;/span&gt; site = SeaSite(
@@ -8,8 +8,7 @@
 
 site.handle(&lt;span class=&quot;hljs-string&quot;&gt;&apos;index.html&apos;&lt;/span&gt;, $ =&amp;gt; {
   $(&lt;span class=&quot;hljs-string&quot;&gt;&apos;title&apos;&lt;/span&gt;).text(&lt;span class=&quot;hljs-string&quot;&gt;&apos;New Title&apos;&lt;/span&gt;)
-})
-&lt;/code&gt;&lt;/pre&gt;
+})&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This example creates the &lt;code&gt;site&lt;/code&gt; object with the source directory &lt;code&gt;public&lt;/code&gt; and the target directory &lt;code&gt;dist&lt;/code&gt;. In the first step, the content of the source directory is cloned into the target directory. The next step is to edit the file &lt;code&gt;index.html&lt;/code&gt;. The help function gets the variable &lt;code&gt;$&lt;/code&gt; known from jQuery and sets the content of the &lt;code&gt;title&lt;/code&gt; element to &lt;code&gt;New Title&lt;/code&gt;. The modified content is saved automatically by the framework.&lt;/p&gt;
 &lt;h2&gt;File patterns and templating&lt;/h2&gt;&lt;p&gt;From here it is easy to build more complex websites with a few lines of code:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-js&quot;&gt;site.handle(&lt;span class=&quot;hljs-regexp&quot;&gt;/.*\.md/&lt;/span&gt;, (content, path) =&amp;gt; {
@@ -21,8 +20,7 @@ site.handle(&lt;span class=&quot;hljs-string&quot;&gt;&apos;index.html&apos;&lt;
    $(&lt;span class=&quot;hljs-string&quot;&gt;&apos;#title&apos;&lt;/span&gt;).text(title)
    $(&lt;span class=&quot;hljs-string&quot;&gt;&apos;#content&apos;&lt;/span&gt;).html(md.html)
    site.write(htmlPath, $.html())
-})
-&lt;/code&gt;&lt;/pre&gt;
+})&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;template.html&lt;/strong&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-html&quot;&gt;&lt;span class=&quot;hljs-meta&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
@@ -33,15 +31,13 @@ site.handle(&lt;span class=&quot;hljs-string&quot;&gt;&apos;index.html&apos;&lt;
   &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&quot;content&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
     Content
   &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;hello-world.md&lt;/strong&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-markdown&quot;&gt;---
 &lt;span class=&quot;hljs-section&quot;&gt;title: Hello World
 ---&lt;/span&gt;
 
-Lorem &lt;span class=&quot;hljs-strong&quot;&gt;**ipsum**&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
+Lorem &lt;span class=&quot;hljs-strong&quot;&gt;**ipsum**&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This example uses a &lt;strong&gt;file pattern&lt;/strong&gt; to find all Markdown files in the site&amp;#39;s source folder. As you may notice,  this time we get a plain string instead of the DOM object from the previous example. This is because DOM objects are only generated from &lt;code&gt;html&lt;/code&gt; and &lt;code&gt;xml&lt;/code&gt; files, otherwise a &lt;strong&gt;string&lt;/strong&gt; is returned.&lt;/p&gt;
 &lt;p&gt;We then directly create a new DOM object from the  &lt;code&gt;template.html&lt;/code&gt; file. There we set the content of the &lt;code&gt;title&lt;/code&gt; element as well as for the DOM element with the ID &lt;code&gt;#title&lt;/code&gt;. The title is extracted from the Markdown file, where we could put even more properties like e.g. language, description, keywords.&lt;/p&gt;
 &lt;p&gt;The Markdown parser &amp;quot;&lt;a href=&quot;https://github.com/chjj/marked&quot;&gt;marked&lt;/a&gt;&amp;quot; we use, converts the contents to an HTML string we can pass to the &lt;code&gt;#content&lt;/code&gt; element in out template.&lt;/p&gt;
@@ -60,8 +56,7 @@ site.handle(&lt;span class=&quot;hljs-string&quot;&gt;&apos;index.html&apos;&lt;
     &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;
       {pages.map(page =&amp;gt; &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;{page.htmlPath}&lt;/span&gt;&amp;gt;&lt;/span&gt;{title}&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;)}
     &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;)
-})
-&lt;/code&gt;&lt;/pre&gt;
+})&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We enhanced the previous example by collecting page info in the &lt;code&gt;pages&lt;/code&gt; variable. After all Markdown pages are processed the links should be added to the &lt;code&gt;index.html&lt;/code&gt; file. We use JSX to create a simple list with links. This is the same code you would use in a React JS project, but of course this is a custom JSX generator, which creates an HTML string form the JSX code.&lt;/p&gt;
 &lt;p&gt;This way you don&amp;#39;t need any complex templating language in the HTML file itself to get things done.&lt;/p&gt;
 &lt;h2&gt;The technology&lt;/h2&gt;&lt;p&gt;All this is made possible by the awesome &lt;a href=&quot;&quot;&gt;cheerio&lt;/a&gt; project, which is driving the DOM and jQuery like part. The API is covering everything you&amp;#39;ll need to manipulate the HTML and XML files.&lt;/p&gt;

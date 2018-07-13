@@ -83,6 +83,24 @@ expect($.html()).toEqual(<span class="hljs-string">&apos;&lt;b&gt;Hallo Welt&lt;
 <pre><code class="lang-js">site.handle(<span class="hljs-regexp">/.*\.html/</span>, ($, path) =&gt; {
     $(<span class="hljs-string">&apos;title&apos;</span>).text(path)
 })</code></pre>
+<p>Usually the DOM is manipulated and written back to replace the source file. You can also return a <code>string</code> to be written as the file content.</p>
+<p>In case no file should be written at all, return <code>false</code>.</p>
+<p>For more flexibility you can also return an object describing details about the output. The available properties:</p>
+<ul>
+<li><code>path</code>: The new destination path</li>
+<li><code>content</code>: Override the <code>$</code> and use this as the file&apos;s content. It can be of type DOM or string</li>
+<li><code>mode</code>: The mode which should be used to write out the DOM, default is <code>html</code> but also <code>xml</code> is supported.</li>
+<li><code>ignore</code>: Set to <code>true</code> is the same as returning <code>false</code>.</li>
+</ul>
+<p>An example:</p>
+<pre><code class="lang-js">site.handle(<span class="hljs-string">&apos;/en/help&apos;</span>, $ =&gt; {
+    $.applyPlugins([plugin.localize({
+        <span class="hljs-attr">lang</span>: <span class="hljs-string">&apos;de&apos;</span>
+    })])
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">path</span>: <span class="hljs-string">&apos;/de/help&apos;</span>
+    }
+})</code></pre>
 <h3 id="outline-7"><a name="outline-7" class="anchor" href="#outline-7">site.copy(from, to)</a></h3><p>Copy file.</p>
 <h3 id="outline-8"><a name="outline-8" class="anchor" href="#outline-8">site.move(from, to)</a></h3><p>Move file.</p>
 <h3 id="outline-9"><a name="outline-9" class="anchor" href="#outline-9">site.remove(pattern)</a></h3><p>Remove files.</p>
@@ -93,6 +111,9 @@ expect($.html()).toEqual(<span class="hljs-string">&apos;&lt;b&gt;Hallo Welt&lt;
 <h3 id="publicURL"><a name="publicURL" class="anchor" href="#publicURL">site.publicURL(path):url </a></h3><p>Convert a <code>path</code> to a public URL that you e.g. would like to see as the canonical URL or in the sitemap. This should usually also include the scheme and host name. Example: <code>https://example.com/contact</code></p>
 <h3 id="outline-14"><a name="outline-14" class="anchor" href="#outline-14">site.copyNPM(module, relativePath, toSitePath)</a></h3><p>Copies subfolder of an NPM module into the site&apos;s public space. This can be useful to always get the latest <code>jquery</code> etc via NPM instead of getting it manually. Example:</p>
 <pre><code class="lang-js">site.copyNOPM(<span class="hljs-string">&apos;jquery&apos;</span>, <span class="hljs-string">&apos;dist&apos;</span>, <span class="hljs-string">&apos;js/jquery&apos;</span>)</code></pre>
+<h3 id="outline-15"><a name="outline-15" class="anchor" href="#outline-15">site.log</a></h3><p>The logger used by <code>site</code>. Example:</p>
+<pre><code class="lang-js">site.log.info(<span class="hljs-string">&apos;Start&apos;</span>)
+site.log.warn(<span class="hljs-string">&apos;Missing&apos;</span>, missing)</code></pre>
 <h2 id="tasks"><a name="tasks" class="anchor" href="#tasks">Tasks </a></h2><p>These are solutions for common tasks. The first parameter is</p>
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> task <span class="hljs-keyword">from</span> <span class="hljs-string">`seasite`</span></code></pre>
 <h3 id="taskhandle"><a name="taskhandle" class="anchor" href="#taskhandle">task.handle(site, options)  </a></h3><p>Walk through all files.</p>
@@ -103,19 +124,19 @@ expect($.html()).toEqual(<span class="hljs-string">&apos;&lt;b&gt;Hallo Welt&lt;
 <li><code>plugins</code>: Plugins to be applied if file is DOM compatible</li>
 <li><code>handler($, path)</code>: Will be called for each HTML file handled and not excluded.</li>
 </ul>
-<h3 id="outline-15"><a name="outline-15" class="anchor" href="#outline-15">task.html(site, options)</a></h3><p>Walk through all HTML files.</p>
+<h3 id="outline-16"><a name="outline-16" class="anchor" href="#outline-16">task.html(site, options)</a></h3><p>Walk through all HTML files.</p>
 <p>Options:</p>
 <ul>
 <li><code>pattern</code>: Pattern is preset to filter files ending on <code>.html</code> or <code>.htm</code></li>
 <li>Other options as in <a href="#taskhandle">task.handle()</a></li>
 </ul>
-<h3 id="outline-16"><a name="outline-16" class="anchor" href="#outline-16">task.markdown(site, options)</a></h3><p>Converts all Markdown files ending on <code>.md</code> to HTML files. You can mix in templates and custom handlers.</p>
-<h3 id="outline-17"><a name="outline-17" class="anchor" href="#outline-17">task.blog(site, options)</a></h3><pre><code class="lang-js">task.blog(site, {
+<h3 id="outline-17"><a name="outline-17" class="anchor" href="#outline-17">task.markdown(site, options)</a></h3><p>Converts all Markdown files ending on <code>.md</code> to HTML files. You can mix in templates and custom handlers.</p>
+<h3 id="outline-18"><a name="outline-18" class="anchor" href="#outline-18">task.blog(site, options)</a></h3><pre><code class="lang-js">task.blog(site, {
     template(site) {
         <span class="hljs-keyword">return</span> site.read(<span class="hljs-string">&apos;blog/template.html&apos;</span>)
     }
 })</code></pre>
-<h3 id="outline-18"><a name="outline-18" class="anchor" href="#outline-18">task.sitemap(site, options)</a></h3><p>Creates a <code>sitemap.txt</code> file. Should be called after all other tasks are completed and templates etc. are removed. </p>
+<h3 id="outline-19"><a name="outline-19" class="anchor" href="#outline-19">task.sitemap(site, options)</a></h3><p>Creates a <code>sitemap.txt</code> file. Should be called after all other tasks are completed and templates etc. are removed. </p>
 <p>Options:</p>
 <ul>
 <li><p><code>exclude</code>: List of patterns to exclude. Strings also match if they are at the beginning. For example <code>[&apos;private/&apos;]</code> will exclude all files in folder <code>private</code></p>
@@ -135,12 +156,12 @@ expect($.html()).toEqual(<span class="hljs-string">&apos;&lt;b&gt;Hallo Welt&lt;
 $.applyPlugins(plugins, {
     <span class="hljs-attr">title</span>: <span class="hljs-string">&apos;Hello World&apos;</span>
 })</code></pre>
-<h3 id="outline-19"><a name="outline-19" class="anchor" href="#outline-19">plugin.bestPractice()</a></h3><p>Make some changes to fit <strong><a href="https://developers.google.com/web/tools/lighthouse">Google Lighthouse</a></strong> <em>best practice tests</em> better.</p>
+<h3 id="outline-20"><a name="outline-20" class="anchor" href="#outline-20">plugin.bestPractice()</a></h3><p>Make some changes to fit <strong><a href="https://developers.google.com/web/tools/lighthouse">Google Lighthouse</a></strong> <em>best practice tests</em> better.</p>
 <ul>
 <li><code>&lt;a target=&quot;_blank&quot;&gt;</code> will receive <code>rel=noopener</code> attribute. <a href="https://developers.google.com/web/tools/lighthouse/audits/noopener">More.</a></li>
 </ul>
-<h3 id="outline-20"><a name="outline-20" class="anchor" href="#outline-20">plugin.googleAnalytics(key)</a></h3><p>Add JS snippet that calls Google Analytics. It will respect <em>do not track</em> settings of the browser. Also supports <em>opt out</em>.</p>
-<h3 id="outline-21"><a name="outline-21" class="anchor" href="#outline-21">plugin.meta(opt)</a></h3><p>Apply various <code>meta</code> tags to improve SEO quality. TBD.</p>
+<h3 id="outline-21"><a name="outline-21" class="anchor" href="#outline-21">plugin.googleAnalytics(key)</a></h3><p>Add JS snippet that calls Google Analytics. It will respect <em>do not track</em> settings of the browser. Also supports <em>opt out</em>.</p>
+<h3 id="outline-22"><a name="outline-22" class="anchor" href="#outline-22">plugin.meta(opt)</a></h3><p>Apply various <code>meta</code> tags to improve SEO quality. TBD.</p>
 <ul>
 <li><code>title</code> will set <code>&lt;title&gt;</code> and <code>&lt;meta og:title&gt;</code></li>
 <li>...</li>
@@ -154,7 +175,7 @@ $.applyPlugins(plugins, {
 <p>The plugin collects all <code>img</code> elements and checks if the referred <code>src</code> file does exists. If <code>width</code> and <code>height</code> are missing, <code>width</code> will be set from the original image file. If the file name contains <code>@2x.</code> the half sizes will be used.</p>
 <p>If the <code>img</code> element is the only child of a <code>p</code> element, the class <code>img-wrapped</code> will be added to the <code>p</code> element.</p>
 <p><strong>Todo:</strong> Fill <code>srcset</code> with appropriate info.</p>
-<h3 id="outline-22"><a name="outline-22" class="anchor" href="#outline-22">plugin.localize(opt)</a></h3><p>This helps to translate a page to a different language easily. Lets go with German <code>opt.lang = &apos;de&apos;</code> in this example. </p>
+<h3 id="outline-23"><a name="outline-23" class="anchor" href="#outline-23">plugin.localize(opt)</a></h3><p>This helps to translate a page to a different language easily. Lets go with German <code>opt.lang = &apos;de&apos;</code> in this example. </p>
 <p>You can provide the translation strings in a JSON file you put in the <code>languages</code> folder (in out example <code>languages/de.json</code>) or by setting <code>opt.string</code> to a dictionary mapping each source string to its translation:</p>
 <pre><code class="lang-json">{
     <span class="hljs-attr">&quot;Hello World&quot;</span>: <span class="hljs-string">&quot;Hallo Welt&quot;</span>,
@@ -174,27 +195,27 @@ doSomethingWithPlugin(
 
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;These strings are missing:&apos;</span>, 
             <span class="hljs-built_in">JSON</span>.stringify(missing, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>))</code></pre>
-<h3 id="outline-23"><a name="outline-23" class="anchor" href="#outline-23">plugin.youtube(opt)</a></h3><p>Streamlines embedded Youtube videos and adds an overlay. The embedded video will only be inserted after the user clicked the play button. This results in faster page loading and better privacy experience.</p>
-<h3 id="outline-24"><a name="outline-24" class="anchor" href="#outline-24">plugin.disqus(opt)</a></h3><p>Commenting provided by <a href="https://disqus.com">disqus.com</a>. The integration is done lazily i.e. user first needs to confirm before actuel 3rd party code is loaded.</p>
+<h3 id="outline-24"><a name="outline-24" class="anchor" href="#outline-24">plugin.youtube(opt)</a></h3><p>Streamlines embedded Youtube videos and adds an overlay. The embedded video will only be inserted after the user clicked the play button. This results in faster page loading and better privacy experience.</p>
+<h3 id="outline-25"><a name="outline-25" class="anchor" href="#outline-25">plugin.disqus(opt)</a></h3><p>Commenting provided by <a href="https://disqus.com">disqus.com</a>. The integration is done lazily i.e. user first needs to confirm before actuel 3rd party code is loaded.</p>
 <ul>
 <li><code>selector</code> defining the containers where the code should be added to (Default <code>.disqus</code>)</li>
 <li><code>disqusURL</code> is the JS code URL provided by disqus to be used <a href="https://disqus.com/admin/install/platforms/universalcode/">for embedding</a> </li>
 </ul>
-<h3 id="outline-25"><a name="outline-25" class="anchor" href="#outline-25">More Plugins</a></h3><p>To be documented:</p>
+<h3 id="outline-26"><a name="outline-26" class="anchor" href="#outline-26">More Plugins</a></h3><p>To be documented:</p>
 <ul>
 <li>plugin.href()</li>
 <li>plugin.tidy()</li>
 </ul>
-<h2 id="outline-26"><a name="outline-26" class="anchor" href="#outline-26">Appendix</a></h2><h3 id="outline-27"><a name="outline-27" class="anchor" href="#outline-27">License</a></h3><p>The project is licensed under AGPLv3. If you need a commercial license, please get in <a href="https://holtwick.de/support">contact with me</a>.</p>
+<h2 id="outline-27"><a name="outline-27" class="anchor" href="#outline-27">Appendix</a></h2><h3 id="outline-28"><a name="outline-28" class="anchor" href="#outline-28">License</a></h3><p>The project is licensed under AGPLv3. If you need a commercial license, please get in <a href="https://holtwick.de/support">contact with me</a>.</p>
 </div></div>
         </div>
 
         <div class="col-sm-1">&#xA0;</div>
         <div class="col-sm-3" id="sidebar"><nav id="outline" class="bs-docs-sidebar hidden-print hidden-sm hidden-xs" data-spy="affix" data-offset-top="68"><ul class="nav"><li><a href="#outline-1">Introduction</a></li><li><a href="#outline-2">Getting Started</a></li><li><a href="#outline-3">Basic Concepts</a><ul class="nav"><li><a href="#outline-4">Paths</a></li><li><a href="#outline-5">Patterns</a></li><li><a href="#dom">DOM</a></li></ul>
-</li><li><a href="#site">Site</a><ul class="nav"><li><a href="#outline-6">site.handle(pattern, fn)</a></li><li><a href="#outline-7">site.copy(from, to)</a></li><li><a href="#outline-8">site.move(from, to)</a></li><li><a href="#outline-9">site.remove(pattern)</a></li><li><a href="#outline-10">site.read(path)</a></li><li><a href="#outline-11">site.write(path, data)</a></li><li><a href="#outline-12">site.paths(pattern, excludePattern):paths</a></li><li><a href="#outline-13">site.url(path):url</a></li><li><a href="#publicURL">site.publicURL(path):url</a></li><li><a href="#outline-14">site.copyNPM(module, relativePath, toSitePath)</a></li></ul>
-</li><li><a href="#tasks">Tasks</a><ul class="nav"><li><a href="#taskhandle">task.handle(site, options)</a></li><li><a href="#outline-15">task.html(site, options)</a></li><li><a href="#outline-16">task.markdown(site, options)</a></li><li><a href="#outline-17">task.blog(site, options)</a></li><li><a href="#outline-18">task.sitemap(site, options)</a></li></ul>
-</li><li><a href="#plugins">Plugins</a><ul class="nav"><li><a href="#outline-19">plugin.bestPractice()</a></li><li><a href="#outline-20">plugin.googleAnalytics(key)</a></li><li><a href="#outline-21">plugin.meta(opt)</a></li><li><a href="#plugin.href">plugin.href(opt)</a></li><li><a href="#plugin.img">plugin.img(opt)</a></li><li><a href="#outline-22">plugin.localize(opt)</a></li><li><a href="#outline-23">plugin.youtube(opt)</a></li><li><a href="#outline-24">plugin.disqus(opt)</a></li><li><a href="#outline-25">More Plugins</a></li></ul>
-</li><li><a href="#outline-26">Appendix</a><ul class="nav"><li><a href="#outline-27">License</a></li><a href="#top" class="back-to-top"> Back to top </a></ul></li></ul></nav></div>
+</li><li><a href="#site">Site</a><ul class="nav"><li><a href="#outline-6">site.handle(pattern, fn)</a></li><li><a href="#outline-7">site.copy(from, to)</a></li><li><a href="#outline-8">site.move(from, to)</a></li><li><a href="#outline-9">site.remove(pattern)</a></li><li><a href="#outline-10">site.read(path)</a></li><li><a href="#outline-11">site.write(path, data)</a></li><li><a href="#outline-12">site.paths(pattern, excludePattern):paths</a></li><li><a href="#outline-13">site.url(path):url</a></li><li><a href="#publicURL">site.publicURL(path):url</a></li><li><a href="#outline-14">site.copyNPM(module, relativePath, toSitePath)</a></li><li><a href="#outline-15">site.log</a></li></ul>
+</li><li><a href="#tasks">Tasks</a><ul class="nav"><li><a href="#taskhandle">task.handle(site, options)</a></li><li><a href="#outline-16">task.html(site, options)</a></li><li><a href="#outline-17">task.markdown(site, options)</a></li><li><a href="#outline-18">task.blog(site, options)</a></li><li><a href="#outline-19">task.sitemap(site, options)</a></li></ul>
+</li><li><a href="#plugins">Plugins</a><ul class="nav"><li><a href="#outline-20">plugin.bestPractice()</a></li><li><a href="#outline-21">plugin.googleAnalytics(key)</a></li><li><a href="#outline-22">plugin.meta(opt)</a></li><li><a href="#plugin.href">plugin.href(opt)</a></li><li><a href="#plugin.img">plugin.img(opt)</a></li><li><a href="#outline-23">plugin.localize(opt)</a></li><li><a href="#outline-24">plugin.youtube(opt)</a></li><li><a href="#outline-25">plugin.disqus(opt)</a></li><li><a href="#outline-26">More Plugins</a></li></ul>
+</li><li><a href="#outline-27">Appendix</a><ul class="nav"><li><a href="#outline-28">License</a></li><a href="#top" class="back-to-top"> Back to top </a></ul></li></ul></nav></div>
     </div>
 </div>
 

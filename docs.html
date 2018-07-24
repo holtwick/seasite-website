@@ -1,25 +1,23 @@
 <!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <title>SeaSite - Documentation of &quot;SeaSite&quot;</title>
 
-    <link href="custom.css" rel="stylesheet" media="all">
-
-    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-    <link rel="icon" type="image/png" href="img/favicon-32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/favicon-96.png" sizes="96x96">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-
-    <link rel="alternate" type="application/rss+xml" title="Blog of Dirk Holtwick" href="atom.xml">
-<link rel="canonical" href="https://holtwick.github.io/seasite-website/seasite-website/docs.html">
-<meta property="og:url" content="https://holtwick.github.io/seasite-website/seasite-website/docs.html">
-<meta property="og:title" content="SeaSite - Documentation of &quot;SeaSite&quot;">
-<meta name="twitter:creator" content="@holtwick">
-<meta name="twitter:card" content="summary">
-<meta name="generator" content="SeaSite, https://github.com/holtwick/seasite/">
-<meta property="og:type" content="website"></head>
+    <link href="custom.css" rel="stylesheet" media="all"> 
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png"> 
+    <link rel="icon" type="image/png" href="img/favicon-32.png" sizes="32x32"> 
+    <link rel="icon" type="image/png" href="img/favicon-96.png" sizes="96x96"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png"> 
+    <link rel="alternate" type="application/rss+xml" title="Blog of Dirk Holtwick" href="atom.xml"> 
+<link rel="canonical" href="https://holtwick.github.io/seasite-website/seasite-website/docs.html"> 
+<meta property="og:url" content="https://holtwick.github.io/seasite-website/seasite-website/docs.html"> 
+<meta property="og:title" content="SeaSite - Documentation of &quot;SeaSite&quot;"> 
+<meta name="twitter:creator" content="@holtwick"> 
+<meta name="twitter:card" content="summary"> 
+<meta name="generator" content="SeaSite, https://github.com/holtwick/seasite/"> 
+<meta property="og:type" content="website"> 
+</head>
 
 <body data-spy="scroll" data-target="#outline">
 
@@ -33,18 +31,18 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand logo" href="index.html">
-                <img alt="Brand" src="img/logo.png" height="28">
+                <img alt="Brand" src="img/logo.png" height="28"> 
             </a>
-        </div>
+        </div> 
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav -navbar-right">
-                <li data-group="index"><a href="index.html">SeaSite</a></li>
-                <li data-group="blog"><a href="blog/">Blog</a></li>
-                <li data-group="product"><a href="products.html">Examples</a></li>
-                <li data-group="docs" class="active"><a href="docs.html">Documentation</a></li>
-            </ul>
-        </div>
-    </div>
+                <li data-group="index"><a href="index.html">SeaSite</a></li> 
+                <li data-group="blog"><a href="blog/">Blog</a></li> 
+                <li data-group="product"><a href="products.html">Examples</a></li> 
+                <li data-group="docs" class="active"><a href="docs.html">Documentation</a></li> 
+            </ul> 
+        </div> 
+    </div> 
 </nav>
 
 <div class="container">
@@ -52,47 +50,77 @@
 
         <div class="col-sm-8 blog-main">
 
-            <div class="post blog-post doc" id="content"><div><h1 class="blog-post-title">Documentation of &quot;SeaSite&quot;</h1><p><em>Author: Dirk Holtwick, <a href="https://holtwick.de">holtwick.de</a></em></p>
-<h2 id="outline-1"><a name="outline-1" class="anchor" href="#outline-1">Introduction</a></h2><p>The purpose of SeaSite is to provide an <strong>easy</strong> and <strong>cross platform consistent</strong> way to <strong>create websites</strong>. This is achieved by using common HTML and Javascript techniques, that are similar to those used for dynamic web pages.</p>
-<p>It all started with my own websites and an article I wrote in my blog about the technique I used: <a href="https://holtwick.de/blog/static-jquery">https://holtwick.de/blog/static-jquery</a></p>
-<h2 id="outline-2"><a name="outline-2" class="anchor" href="#outline-2">Getting Started</a></h2><p>The easiest way to get started is to install SeaSite globally:</p>
+            <div class="post blog-post doc" id="content"><div><h1 class="blog-post-title">Documentation of &quot;SeaSite&quot;</h1> 
+<p><em>Author: Dirk Holtwick, <a href="https://holtwick.de">holtwick.de</a></em></p> 
+<h2 data-anchor="outline-1"><a id="outline-1" name="outline-1" class="anchor" href="#outline-1">Introduction</a></h2> 
+<p>The purpose of SeaSite is to provide an <strong>easy</strong> and <strong>cross platform consistent</strong> way to <strong>create websites</strong>. This is achieved by using common HTML and Javascript techniques, that are similar to those used for dynamic web pages.</p> 
+<p>It all started with my own websites and an article I wrote in my blog about the technique I used: <a href="https://holtwick.de/blog/static-jquery">https://holtwick.de/blog/static-jquery</a></p> 
+<h2 data-anchor="outline-2"><a id="outline-2" name="outline-2" class="anchor" href="#outline-2">Getting Started</a></h2> 
+<p>The easiest way to get started is to install SeaSite globally:</p> 
 <pre><code class="lang-sh">npm install seasite -g</code></pre>
-<p>This will install a command line tool called <code>seasite</code> that you can now use to setup a project in an empty folder:</p>
+<p>This will install a command line tool called <code>seasite</code> that you can now use to setup a project in an empty folder:</p> 
 <pre><code class="lang-sh">seasite init
 npm install</code></pre>
-<p>The following command will create the site in the folder <code>dist</code>:</p>
+<p>The following command will create the site in the folder <code>dist</code>:</p> 
 <pre><code class="lang-sh">npm start</code></pre>
-<h2 id="outline-3"><a name="outline-3" class="anchor" href="#outline-3">Basic Concepts</a></h2><p>The central piece of the engine is the <code>SeaSite</code> object. In the most simple setup a source and a destination folder will be defined. The first action that will happen is to close the destination to the source folder. All following actions will operate on this clone.</p>
+<h2 data-anchor="outline-3"><a id="outline-3" name="outline-3" class="anchor" href="#outline-3">Basic Concepts</a></h2> 
+<p>The central piece of the engine is the <code>SeaSite</code> object. In the most simple setup a source and a destination folder will be defined. <strong>The first action that will happen is to clone the destination to the source folder</strong>. All following actions will operate on this clone.</p> 
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> {SeaSite} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;seasite&apos;</span>
 
 <span class="hljs-keyword">let</span> site = <span class="hljs-keyword">new</span> SeaSite(
         <span class="hljs-string">&apos;public&apos;</span>,  <span class="hljs-comment">// Source</span>
         <span class="hljs-string">&apos;dist&apos;</span>)    <span class="hljs-comment">// Destination</span></code></pre>
-<p>The third parameter will hold options:</p>
+<p>The third parameter will hold options:</p> 
 <ul>
-<li><code>baseURL</code></li>
-<li><code>publicURL(path)</code>: Override for <a href="#publicURL"><code>site.publicURL()</code></a></li>
-</ul>
-<h3 id="outline-4"><a name="outline-4" class="anchor" href="#outline-4">Paths</a></h3><p>For the following features it is important to understand what <code>path</code> refers to. So after the instantiation of <code>SeaSite</code> all work is happening on the copy in the destination folder. A path like <code>index.html</code> will than map to <code>dist/index.html</code> in our previous example. <strong>Todo: Slash requirements?!</strong></p>
-<h3 id="outline-5"><a name="outline-5" class="anchor" href="#outline-5">Patterns</a></h3><p>The <strong>path pattern</strong> (referred to as <code>pattern</code>) that is used in some of the following methods, can be either a simple string representing the full path, like <code>contact/index.html</code> or a regular expression like <code>.*\.md</code> which would retrieve all Markdown files, even those in sub directories. The last option is to pass an <code>Array</code> with a list of strings or regular expressions as described before.</p>
-<h3 id="dom"><a name="dom" class="anchor" href="#dom">DOM </a></h3><p>The real magic is in the jQuery like manipulation of the contents. <a href="https://cheerio.js.org">Cheerio</a> is used to provide the functionality. In SeaSite the <code>dom()</code> helper converts input like strings to a jQuery like DOM environment. It also adds some more functionalities, like support for <a href="#plugins">plugins</a>.</p>
+<li><code>baseURL</code></li> 
+<li><code>publicURL(path)</code>: Override for <a href="#publicURL"><code>site.publicURL()</code></a></li> 
+</ul> 
+<h3 data-anchor="paths"><a id="paths" name="paths" class="anchor" href="#paths">Paths </a></h3> 
+<p>For the following features it is important to understand what <code>path</code> refers to. So after the instantiation of <code>SeaSite</code> all work is happening on the copy in the destination folder. A path like <code>index.html</code> will than map to <code>dist/index.html</code> in our previous example.</p> 
+<h3 data-anchor="patterns"><a id="patterns" name="patterns" class="anchor" href="#patterns">Patterns </a></h3> 
+<p>The <strong>path pattern</strong> (referred to as <code>pattern</code>) that is used in some of the following methods, can be either a simple string representing the full path, like <code>contact/index.html</code> or a regular expression like <code>.*\.md</code> which would retrieve all Markdown files, even those in sub directories. The last option is to pass an <code>Array</code> with a list of strings or regular expressions as described before.</p> 
+<h3 data-anchor="dom"><a id="dom" name="dom" class="anchor" href="#dom">DOM </a></h3> 
+<p>The real magic is in the jQuery like manipulation of the contents. <a href="https://cheerio.js.org">Cheerio</a> is used to provide the functionality. In SeaSite the <code>dom()</code> helper converts input like strings to a jQuery like DOM environment. It also adds some more functionalities, like support for <a href="#plugins">plugins</a>.</p> 
 <pre><code class="lang-jsx"><span class="hljs-keyword">let</span> $ = dom(<span class="hljs-string">&apos;&lt;b&gt;Hello World&lt;/b&gt;&apos;</span>)
 $(b).text(<span class="hljs-string">&apos;Hallo Welt&apos;</span>)
 expect($.html()).toEqual(<span class="hljs-string">&apos;&lt;b&gt;Hallo Welt&lt;/b&gt;&apos;</span>)</code></pre>
-<h2 id="site"><a name="site" class="anchor" href="#site">Site </a></h2><h3 id="outline-6"><a name="outline-6" class="anchor" href="#outline-6">site.handle(pattern, fn)</a></h3><p>Make all files matching <code>pattern</code> go through <code>fn</code>. For HTML and XML files the parameters of <code>fn</code> will be <code>dom</code> and <code>path</code> otherwise just the content. Example:</p>
+<p>If you need to be more specific about the content there are also <code>xml()</code> and <code>html()</code> DOM shortcuts available. To store the changes into a file you can use <code>site.writeDOM($, path)</code> or get it as a string like <code>$.markup()</code>.</p> 
+<h3 data-anchor="outline-4"><a id="outline-4" name="outline-4" class="anchor" href="#outline-4">JSX</a></h3> 
+<p>SeaSite also comes with support for JSX built in. All you need to do is to let the environment know about it, like this: </p> 
+<pre><code class="lang-jsx"><span class="hljs-comment">// @jsx jsx</span>
+<span class="hljs-keyword">import</span> {jsx} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;seasite&apos;</span></code></pre>
+<p>This is setting the function called by JSX to <code>jsx</code> which is part of the package. You can now use it together with DOM:</p> 
+<pre><code class="lang-jsx"><span class="hljs-keyword">let</span> $ = html(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>)
+$.append(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum {ctr}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>)
+<span class="hljs-keyword">let</span> output = $.markup()</code></pre>
+<p>It is even possible to use DOM inside of JSX:</p> 
+<pre><code class="lang-jsx"><span class="hljs-keyword">let</span> content = html(site.read(<span class="hljs-string">&apos;content.html&apos;</span>))
+<span class="hljs-keyword">let</span> $ = html(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{ content }<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>)</code></pre>
+<h3 data-anchor="outline-5"><a id="outline-5" name="outline-5" class="anchor" href="#outline-5">Markdown</a></h3> 
+<p>Full support for Markdown is also integrated. A file or string can easily be parsed:</p> 
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {markdown} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;seasite&apos;</span>
+<span class="hljs-keyword">let</span> md = markdown(site.read(<span class="hljs-string">&apos;content.md&apos;</span>))</code></pre>
+<p>The resulting object contains the following data:</p> 
+<ul>
+<li><code>html</code> of the content</li> 
+<li><code>props</code> contains the parsed <em>YAML Front Matter</em> section</li> 
+<li><code>outline</code> of the headers in the content (only available if <code>opt.outline</code> has been set like <code>markdown(path, {outline: true})</code> or if the YAML value <code>outline</code> is set to <code>true</code>)</li> 
+</ul> 
+<h2 data-anchor="site"><a id="site" name="site" class="anchor" href="#site">Site </a></h2> 
+<h3 data-anchor="outline-6"><a id="outline-6" name="outline-6" class="anchor" href="#outline-6">site.handle(pattern, fn)</a></h3> 
+<p>Make all files matching <code>pattern</code> go through <code>fn</code>. For HTML and XML files the parameters of <code>fn</code> will be <code>dom</code> and <code>path</code> otherwise just the content. Example:</p> 
 <pre><code class="lang-js">site.handle(<span class="hljs-regexp">/.*\.html/</span>, ($, path) =&gt; {
     $(<span class="hljs-string">&apos;title&apos;</span>).text(path)
 })</code></pre>
-<p>Usually the DOM is manipulated and written back to replace the source file. You can also return a <code>string</code> to be written as the file content.</p>
-<p>In case no file should be written at all, return <code>false</code>.</p>
-<p>For more flexibility you can also return an object describing details about the output. The available properties:</p>
+<p>Usually the DOM is manipulated and written back to replace the source file. You can also return a <code>string</code> to be written as the file content.</p> 
+<p>In case no file should be written at all, return <code>false</code>.</p> 
+<p>For more flexibility you can also return an object describing details about the output. The available properties:</p> 
 <ul>
-<li><code>path</code>: The new destination path</li>
-<li><code>content</code>: Override the <code>$</code> and use this as the file&apos;s content. It can be of type DOM or string</li>
-<li><code>mode</code>: The mode which should be used to write out the DOM, default is <code>html</code> but also <code>xml</code> is supported.</li>
-<li><code>ignore</code>: Set to <code>true</code> is the same as returning <code>false</code>.</li>
-</ul>
-<p>An example:</p>
+<li><code>path</code>: The new destination path</li> 
+<li><code>content</code>: Override the <code>$</code> and use this as the file&apos;s content. It can be of type DOM or string</li> 
+<li><code>ignore</code>: Set to <code>true</code> is the same as returning <code>false</code>.</li> 
+</ul> 
+<p>An example:</p> 
 <pre><code class="lang-js">site.handle(<span class="hljs-string">&apos;/en/help&apos;</span>, $ =&gt; {
     $.applyPlugins([plugin.localize({
         <span class="hljs-attr">lang</span>: <span class="hljs-string">&apos;de&apos;</span>
@@ -101,49 +129,85 @@ expect($.html()).toEqual(<span class="hljs-string">&apos;&lt;b&gt;Hallo Welt&lt;
         <span class="hljs-attr">path</span>: <span class="hljs-string">&apos;/de/help&apos;</span>
     }
 })</code></pre>
-<h3 id="outline-7"><a name="outline-7" class="anchor" href="#outline-7">site.copy(from, to)</a></h3><p>Copy file.</p>
-<h3 id="outline-8"><a name="outline-8" class="anchor" href="#outline-8">site.move(from, to)</a></h3><p>Move file.</p>
-<h3 id="outline-9"><a name="outline-9" class="anchor" href="#outline-9">site.remove(pattern)</a></h3><p>Remove files.</p>
-<h3 id="outline-10"><a name="outline-10" class="anchor" href="#outline-10">site.read(path)</a></h3><p>Read file at <code>path</code>. Result is of type Buffer.</p>
-<h3 id="outline-11"><a name="outline-11" class="anchor" href="#outline-11">site.write(path, data)</a></h3><p>Writes <code>data</code> to <code>path</code> overwriting existing files without asking for confirmation. <code>data</code> can be of type String, Buffer or <a href="#dom">DOM</a>.</p>
-<h3 id="outline-12"><a name="outline-12" class="anchor" href="#outline-12">site.paths(pattern, excludePattern):paths</a></h3><p>Returns all paths that match <code>pattern</code>. Optionally matches can be excluded via <code>excludePattern</code>.</p>
-<h3 id="outline-13"><a name="outline-13" class="anchor" href="#outline-13">site.url(path):url</a></h3><p>Converts a path to a local url with leading <code>/</code>.</p>
-<h3 id="publicURL"><a name="publicURL" class="anchor" href="#publicURL">site.publicURL(path):url </a></h3><p>Convert a <code>path</code> to a public URL that you e.g. would like to see as the canonical URL or in the sitemap. This should usually also include the scheme and host name. Example: <code>https://example.com/contact</code></p>
-<h3 id="outline-14"><a name="outline-14" class="anchor" href="#outline-14">site.copyNPM(module, relativePath, toSitePath)</a></h3><p>Copies subfolder of an NPM module into the site&apos;s public space. This can be useful to always get the latest <code>jquery</code> etc via NPM instead of getting it manually. Example:</p>
+<h3 data-anchor="outline-7"><a id="outline-7" name="outline-7" class="anchor" href="#outline-7">site.copy(from, to)</a></h3> 
+<p>Copy file.</p> 
+<h3 data-anchor="outline-8"><a id="outline-8" name="outline-8" class="anchor" href="#outline-8">site.move(from, to)</a></h3> 
+<p>Move file.</p> 
+<h3 data-anchor="outline-9"><a id="outline-9" name="outline-9" class="anchor" href="#outline-9">site.remove(pattern)</a></h3> 
+<p>Remove files.</p> 
+<h3 data-anchor="outline-10"><a id="outline-10" name="outline-10" class="anchor" href="#outline-10">site.read(path)</a></h3> 
+<p>Read file at <code>path</code>. Result is of type Buffer.</p> 
+<h3 data-anchor="outline-11"><a id="outline-11" name="outline-11" class="anchor" href="#outline-11">site.write(path, data)</a></h3> 
+<p>Writes <code>data</code> to <code>path</code> overwriting existing files without asking for confirmation. <code>data</code> can be of type String, Buffer or <a href="#dom">DOM</a>.</p> 
+<h3 data-anchor="outline-12"><a id="outline-12" name="outline-12" class="anchor" href="#outline-12">site.paths(pattern, excludePattern):paths</a></h3> 
+<p>Returns all paths that match <code>pattern</code>. Optionally matches can be excluded via <code>excludePattern</code>. Set <a href="#patterns">patterns</a> section to learn more about which patterns are supported.</p> 
+<h3 data-anchor="outline-13"><a id="outline-13" name="outline-13" class="anchor" href="#outline-13">site.url(path):url</a></h3> 
+<p>Converts a path to a local url with leading <code>/</code>.</p> 
+<h3 data-anchor="publicURL"><a id="publicURL" name="publicURL" class="anchor" href="#publicURL">site.publicURL(path):url </a></h3> 
+<p>Convert a <code>path</code> to a public URL that you e.g. would like to see as the canonical URL or in the sitemap. This should usually also include the scheme and host name. Example: <code>https://example.com/contact</code></p> 
+<h3 data-anchor="outline-14"><a id="outline-14" name="outline-14" class="anchor" href="#outline-14">site.copyNPM(module, relativePath, toSitePath)</a></h3> 
+<p>Copies subfolder of an NPM module into the site&apos;s public space. This can be useful to always get the latest <code>jquery</code> etc via NPM instead of getting it manually. Example:</p> 
 <pre><code class="lang-js">site.copyNOPM(<span class="hljs-string">&apos;jquery&apos;</span>, <span class="hljs-string">&apos;dist&apos;</span>, <span class="hljs-string">&apos;js/jquery&apos;</span>)</code></pre>
-<h3 id="outline-15"><a name="outline-15" class="anchor" href="#outline-15">site.log</a></h3><p>The logger used by <code>site</code>. Example:</p>
+<h3 data-anchor="outline-15"><a id="outline-15" name="outline-15" class="anchor" href="#outline-15">site.log</a></h3> 
+<p>The logger used by <code>site</code>. Example:</p> 
 <pre><code class="lang-js">site.log.info(<span class="hljs-string">&apos;Start&apos;</span>)
 site.log.warn(<span class="hljs-string">&apos;Missing&apos;</span>, missing)</code></pre>
-<h2 id="tasks"><a name="tasks" class="anchor" href="#tasks">Tasks </a></h2><p>These are solutions for common tasks. The first parameter is</p>
+<h2 data-anchor="tasks"><a id="tasks" name="tasks" class="anchor" href="#tasks">Tasks </a></h2> 
+<p>These are solutions for common tasks. The first parameter is</p> 
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> task <span class="hljs-keyword">from</span> <span class="hljs-string">`seasite`</span></code></pre>
-<h3 id="taskhandle"><a name="taskhandle" class="anchor" href="#taskhandle">task.handle(site, options)  </a></h3><p>Walk through all files.</p>
-<p>Options:</p>
+<h3 data-anchor="taskhandle"><a id="taskhandle" name="taskhandle" class="anchor" href="#taskhandle">task.handle(site, options)  </a></h3> 
+<p>Walk through all files.</p> 
+<p>Options:</p> 
 <ul>
-<li><code>pattern</code>: Patterns to be included</li>
-<li><code>exclude</code>: Patterns to be excluded</li>
-<li><code>plugins</code>: Plugins to be applied if file is DOM compatible</li>
-<li><code>handler($, path)</code>: Will be called for each HTML file handled and not excluded.</li>
-</ul>
-<h3 id="outline-16"><a name="outline-16" class="anchor" href="#outline-16">task.html(site, options)</a></h3><p>Walk through all HTML files.</p>
-<p>Options:</p>
+<li><code>pattern</code>: <a href="#patterns">Patterns</a> to be included</li> 
+<li><code>exclude</code>: <a href="#patterns">Patterns</a> to be excluded</li> 
+<li><code>plugins</code>: Plugins to be applied if file is DOM compatible</li> 
+<li><code>handler($, path)</code>: Will be called for each HTML file handled and not excluded.</li> 
+</ul> 
+<h3 data-anchor="outline-16"><a id="outline-16" name="outline-16" class="anchor" href="#outline-16">task.html(site, options)</a></h3> 
+<p>Walk through all HTML files.</p> 
+<p>Options:</p> 
 <ul>
-<li><code>pattern</code>: Pattern is preset to filter files ending on <code>.html</code> or <code>.htm</code></li>
-<li>Other options as in <a href="#taskhandle">task.handle()</a></li>
-</ul>
-<h3 id="outline-17"><a name="outline-17" class="anchor" href="#outline-17">task.markdown(site, options)</a></h3><p>Converts all Markdown files ending on <code>.md</code> to HTML files. You can mix in templates and custom handlers.</p>
-<h3 id="outline-18"><a name="outline-18" class="anchor" href="#outline-18">task.blog(site, options)</a></h3><pre><code class="lang-js">task.blog(site, {
+<li><code>pattern</code>: <a href="#patterns">Patterns</a> to be included. Preset to filter files ending on <code>.html</code> or <code>.htm</code></li> 
+<li><code>exclude</code>: <a href="#patterns">Patterns</a> to be excluded</li> 
+</ul> 
+<h3 data-anchor="outline-17"><a id="outline-17" name="outline-17" class="anchor" href="#outline-17">task.markdown(site, options)</a></h3> 
+<p>Converts all Markdown files ending on <code>.md</code> to HTML files. You can mix in templates and custom handlers.</p> 
+<h3 data-anchor="outline-18"><a id="outline-18" name="outline-18" class="anchor" href="#outline-18">task.blog(site, options)</a></h3> 
+<pre><code class="lang-js">task.blog(site, {
     template(site) {
         <span class="hljs-keyword">return</span> site.read(<span class="hljs-string">&apos;blog/template.html&apos;</span>)
     }
 })</code></pre>
-<h3 id="outline-19"><a name="outline-19" class="anchor" href="#outline-19">task.sitemap(site, options)</a></h3><p>Creates a <code>sitemap.txt</code> file. Should be called after all other tasks are completed and templates etc. are removed. </p>
-<p>Options:</p>
+<h3 data-anchor="outline-19"><a id="outline-19" name="outline-19" class="anchor" href="#outline-19">task.sitemap(site, options)</a></h3> 
+<p>Creates a <code>sitemap.txt</code> file. Should be called after all other tasks are completed and templates etc. are removed. </p> 
+<p>Options:</p> 
 <ul>
-<li><p><code>exclude</code>: List of patterns to exclude. Strings also match if they are at the beginning. For example <code>[&apos;private/&apos;]</code> will exclude all files in folder <code>private</code></p>
-<p>&#x200B;</p>
-</li>
-</ul>
-<h2 id="plugins"><a name="plugins" class="anchor" href="#plugins">Plugins </a></h2><p>Plugins perform changes on a DOM object. They can be reused. Example:</p>
+<li><code>exclude</code>: List of patterns to exclude. Strings also match if they are at the beginning. For example <code>[&apos;private/&apos;]</code> will exclude all files in folder <code>private</code></li> 
+</ul> 
+<h3 data-anchor="outline-20"><a id="outline-20" name="outline-20" class="anchor" href="#outline-20">task.release(site, options)</a></h3> 
+<p>Task for (macOS) software distribution, where the release statement is written in Markdown. </p> 
+<p>The files need to follow specific naming patterns. The download files end on <code>.zip</code> and the description files on <code>.md</code>. Before the suffix there has to be the <strong>version</strong> string and optionally the <strong>build</strong> number. Examples:</p> 
+<pre><code>Receipts-1.2.3.md
+Receipts-1.2.3-888.zip
+Receipts-1.2.4.md
+Receipts-1.2.4.zip</code></pre><p>The version string always has to be of the following structure: <strong>major.minor.patch.fix</strong> where <code>.fix</code> is optional. The build number is just an integer. Learn more about versioning at <a href="https://semver.org">https://semver.org</a>.</p> 
+<ul>
+<li><code>folder</code> where download files and descriptions are</li> 
+<li><code>pattern</code> to override <code>folder</code> with specific requirements for download file collection</li> 
+</ul> 
+<p>Returns a sorted list of release infos, where the newest is the first entry:</p> 
+<ul>
+<li><code>path</code> to download file</li> 
+<li><code>descPath</code> to the file containing the description</li> 
+<li><code>version</code> in human readable form like <code>1.2.3</code></li> 
+<li><code>build</code> number if available</li> 
+<li><code>date</code> of the file creation</li> 
+<li>... and some more for your convenience like <code>minor</code>, <code>major</code> etc</li> 
+</ul> 
+<p>Please note that only those download files are listed which also have a matching <code>.md</code> file.</p> 
+<h2 data-anchor="plugins"><a id="plugins" name="plugins" class="anchor" href="#plugins">Plugins </a></h2> 
+<p>Plugins perform changes on a DOM object. They can be reused. Example:</p> 
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> plugin <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;seasite&apos;</span>
 
 <span class="hljs-keyword">const</span> plugins = [
@@ -156,34 +220,41 @@ site.log.warn(<span class="hljs-string">&apos;Missing&apos;</span>, missing)</co
 $.applyPlugins(plugins, {
     <span class="hljs-attr">title</span>: <span class="hljs-string">&apos;Hello World&apos;</span>
 })</code></pre>
-<h3 id="outline-20"><a name="outline-20" class="anchor" href="#outline-20">plugin.bestPractice()</a></h3><p>Make some changes to fit <strong><a href="https://developers.google.com/web/tools/lighthouse">Google Lighthouse</a></strong> <em>best practice tests</em> better.</p>
+<h3 data-anchor="outline-21"><a id="outline-21" name="outline-21" class="anchor" href="#outline-21">plugin.bestPractice()</a></h3> 
+<p>Make some changes to fit <strong><a href="https://developers.google.com/web/tools/lighthouse">Google Lighthouse</a></strong> <em>best practice tests</em> better.</p> 
 <ul>
-<li><code>&lt;a target=&quot;_blank&quot;&gt;</code> will receive <code>rel=noopener</code> attribute. <a href="https://developers.google.com/web/tools/lighthouse/audits/noopener">More.</a></li>
-</ul>
-<h3 id="outline-21"><a name="outline-21" class="anchor" href="#outline-21">plugin.googleAnalytics(key)</a></h3><p>Add JS snippet that calls Google Analytics. It will respect <em>do not track</em> settings of the browser. Also supports <em>opt out</em>.</p>
-<h3 id="outline-22"><a name="outline-22" class="anchor" href="#outline-22">plugin.meta(opt)</a></h3><p>Apply various <code>meta</code> tags to improve SEO quality. TBD.</p>
+<li><code>&lt;a target=&quot;_blank&quot;&gt;</code> will receive <code>rel=noopener</code> attribute. <a href="https://developers.google.com/web/tools/lighthouse/audits/noopener">More.</a></li> 
+</ul> 
+<h3 data-anchor="outline-22"><a id="outline-22" name="outline-22" class="anchor" href="#outline-22">plugin.googleAnalytics(key)</a></h3> 
+<p>Add JS snippet that calls Google Analytics. It will respect <em>do not track</em> settings of the browser. Also supports <em>opt out</em>.</p> 
+<h3 data-anchor="outline-23"><a id="outline-23" name="outline-23" class="anchor" href="#outline-23">plugin.meta(opt)</a></h3> 
+<p>Apply various <code>meta</code> tags to improve SEO quality. TBD.</p> 
 <ul>
-<li><code>title</code> will set <code>&lt;title&gt;</code> and <code>&lt;meta og:title&gt;</code></li>
-<li>...</li>
-</ul>
-<h3 id="plugin.href"><a name="plugin.href" class="anchor" href="#plugin.href">plugin.href(opt) </a></h3><p>Normalize links to the needs of the current site.</p>
+<li><code>title</code> will set <code>&lt;title&gt;</code> and <code>&lt;meta og:title&gt;</code></li> 
+<li>...</li> 
+</ul> 
+<h3 data-anchor="plugin.href"><a id="plugin.href" name="plugin.href" class="anchor" href="#plugin.href">plugin.href(opt) </a></h3> 
+<p>Normalize links to the needs of the current site.</p> 
 <ul>
-<li><code>relative</code> will transform links to be relative to the basePath of the current file</li>
-<li><code>handleURL(url)</code> allows final modifications for the resulting URL like stripping the <code>.html</code> part etc. </li>
-</ul>
-<h3 id="plugin.img"><a name="plugin.img" class="anchor" href="#plugin.img">plugin.img(opt) </a></h3><p>Requires <code>opt.site</code> or <code>opt.basePath</code> to know about the base folder of the site. Optionally  <code>opt.path</code> can be passed to resolve relative links.</p>
-<p>The plugin collects all <code>img</code> elements and checks if the referred <code>src</code> file does exists. If <code>width</code> and <code>height</code> are missing, <code>width</code> will be set from the original image file. If the file name contains <code>@2x.</code> the half sizes will be used.</p>
-<p>If the <code>img</code> element is the only child of a <code>p</code> element, the class <code>img-wrapped</code> will be added to the <code>p</code> element.</p>
-<p><strong>Todo:</strong> Fill <code>srcset</code> with appropriate info.</p>
-<h3 id="outline-23"><a name="outline-23" class="anchor" href="#outline-23">plugin.localize(opt)</a></h3><p>This helps to translate a page to a different language easily. Lets go with German <code>opt.lang = &apos;de&apos;</code> in this example. </p>
-<p>You can provide the translation strings in a JSON file you put in the <code>languages</code> folder (in out example <code>languages/de.json</code>) or by setting <code>opt.string</code> to a dictionary mapping each source string to its translation:</p>
+<li><code>relative</code> will transform links to be relative to the basePath of the current file</li> 
+<li><code>handleURL(url)</code> allows final modifications for the resulting URL like stripping the <code>.html</code> part etc. </li> 
+<li><code>ignore</code>: Regular expression</li> 
+</ul> 
+<h3 data-anchor="plugin.img"><a id="plugin.img" name="plugin.img" class="anchor" href="#plugin.img">plugin.img(opt) </a></h3> 
+<p>Requires <code>opt.site</code> or <code>opt.basePath</code> to know about the base folder of the site. Optionally  <code>opt.path</code> can be passed to resolve relative links.</p> 
+<p>The plugin collects all <code>img</code> elements and checks if the referred <code>src</code> file does exists. If <code>width</code> and <code>height</code> are missing, <code>width</code> will be set from the original image file. If the file name contains <code>@2x.</code> the half sizes will be used.</p> 
+<p>If the <code>img</code> element is the only child of a <code>p</code> element, the class <code>img-wrapped</code> will be added to the <code>p</code> element.</p> 
+<p><strong>Todo:</strong> Fill <code>srcset</code> with appropriate info.</p> 
+<h3 data-anchor="outline-24"><a id="outline-24" name="outline-24" class="anchor" href="#outline-24">plugin.localize(opt)</a></h3> 
+<p>This helps to translate a page to a different language easily. Lets go with German <code>opt.lang = &apos;de&apos;</code> in this example. </p> 
+<p>You can provide the translation strings in a JSON file you put in the <code>languages</code> folder (in out example <code>languages/de.json</code>) or by setting <code>opt.string</code> to a dictionary mapping each source string to its translation:</p> 
 <pre><code class="lang-json">{
     <span class="hljs-attr">&quot;Hello World&quot;</span>: <span class="hljs-string">&quot;Hallo Welt&quot;</span>,
     <span class="hljs-attr">&quot;/en/hello&quot;</span>: <span class="hljs-string">&quot;/de/hello&quot;</span>
 }</code></pre>
-<p>Now in the HTML you can prepend any attribute or text with one or two <code>_</code> to mark it for translation:</p>
+<p>Now in the HTML you can prepend any attribute or text with one or two <code>_</code> to mark it for translation:</p> 
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;_/en/hello&quot;</span>&gt;</span>_Hello World<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
-<p>For debugging purposes missing strings can be collected:</p>
+<p>For debugging purposes missing strings can be collected:</p> 
 <pre><code class="lang-js"><span class="hljs-keyword">let</span> missing = {}
 
 doSomethingWithPlugin(
@@ -195,45 +266,95 @@ doSomethingWithPlugin(
 
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;These strings are missing:&apos;</span>, 
             <span class="hljs-built_in">JSON</span>.stringify(missing, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>))</code></pre>
-<h3 id="outline-24"><a name="outline-24" class="anchor" href="#outline-24">plugin.youtube(opt)</a></h3><p>Streamlines embedded Youtube videos and adds an overlay. The embedded video will only be inserted after the user clicked the play button. This results in faster page loading and better privacy experience.</p>
-<h3 id="outline-25"><a name="outline-25" class="anchor" href="#outline-25">plugin.disqus(opt)</a></h3><p>Commenting provided by <a href="https://disqus.com">disqus.com</a>. The integration is done lazily i.e. user first needs to confirm before actuel 3rd party code is loaded.</p>
+<p>Additionally to that it is also possible to set the language on a <strong>per element level</strong> by setting <code>data-lang</code>.</p> 
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-lang</span>=<span class="hljs-string">&quot;de&quot;</span>&gt;</span>Hallo Welt<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+<p>If an element has a <code>data-lang</code> attribute it will be removed if it does not match the current language. For testing in your template you might like add something like the following to only see on language version:</p> 
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    *<span class="hljs-selector-attr">[data-lang=de]</span> {
+        <span class="hljs-attribute">display</span>: none;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+<h3 data-anchor="plugin.tidy"><a id="plugin.tidy" name="plugin.tidy" class="anchor" href="#plugin.tidy">plugin.tidy(opt) </a></h3> 
+<p>Adds <code>\n</code> to end of common block and non closing elements to make it more readable. </p> 
+<h3 data-anchor="outline-25"><a id="outline-25" name="outline-25" class="anchor" href="#outline-25">plugin.youtube(opt)</a></h3> 
+<p>Streamlines embedded Youtube videos and adds an overlay. The embedded video will only be inserted after the user clicked the play button. This results in faster page loading and better privacy experience.</p> 
+<h3 data-anchor="outline-26"><a id="outline-26" name="outline-26" class="anchor" href="#outline-26">plugin.disqus(opt)</a></h3> 
+<p>Commenting provided by <a href="https://disqus.com">disqus.com</a>. The integration is done lazily i.e. user first needs to confirm before actuel 3rd party code is loaded.</p> 
 <ul>
-<li><code>selector</code> defining the containers where the code should be added to (Default <code>.disqus</code>)</li>
-<li><code>disqusURL</code> is the JS code URL provided by disqus to be used <a href="https://disqus.com/admin/install/platforms/universalcode/">for embedding</a> </li>
-</ul>
-<h3 id="outline-26"><a name="outline-26" class="anchor" href="#outline-26">More Plugins</a></h3><p>To be documented:</p>
-<ul>
-<li>plugin.href()</li>
-<li>plugin.tidy()</li>
-</ul>
-<h2 id="outline-27"><a name="outline-27" class="anchor" href="#outline-27">Appendix</a></h2><h3 id="outline-28"><a name="outline-28" class="anchor" href="#outline-28">License</a></h3><p>The project is licensed under AGPLv3. If you need a commercial license, please get in <a href="https://holtwick.de/support">contact with me</a>.</p>
-</div></div>
-        </div>
-
-        <div class="col-sm-1">&#xA0;</div>
-        <div class="col-sm-3" id="sidebar"><nav id="outline" class="bs-docs-sidebar hidden-print hidden-sm hidden-xs" data-spy="affix" data-offset-top="68"><ul class="nav"><li><a href="#outline-1">Introduction</a></li><li><a href="#outline-2">Getting Started</a></li><li><a href="#outline-3">Basic Concepts</a><ul class="nav"><li><a href="#outline-4">Paths</a></li><li><a href="#outline-5">Patterns</a></li><li><a href="#dom">DOM</a></li></ul>
-</li><li><a href="#site">Site</a><ul class="nav"><li><a href="#outline-6">site.handle(pattern, fn)</a></li><li><a href="#outline-7">site.copy(from, to)</a></li><li><a href="#outline-8">site.move(from, to)</a></li><li><a href="#outline-9">site.remove(pattern)</a></li><li><a href="#outline-10">site.read(path)</a></li><li><a href="#outline-11">site.write(path, data)</a></li><li><a href="#outline-12">site.paths(pattern, excludePattern):paths</a></li><li><a href="#outline-13">site.url(path):url</a></li><li><a href="#publicURL">site.publicURL(path):url</a></li><li><a href="#outline-14">site.copyNPM(module, relativePath, toSitePath)</a></li><li><a href="#outline-15">site.log</a></li></ul>
-</li><li><a href="#tasks">Tasks</a><ul class="nav"><li><a href="#taskhandle">task.handle(site, options)</a></li><li><a href="#outline-16">task.html(site, options)</a></li><li><a href="#outline-17">task.markdown(site, options)</a></li><li><a href="#outline-18">task.blog(site, options)</a></li><li><a href="#outline-19">task.sitemap(site, options)</a></li></ul>
-</li><li><a href="#plugins">Plugins</a><ul class="nav"><li><a href="#outline-20">plugin.bestPractice()</a></li><li><a href="#outline-21">plugin.googleAnalytics(key)</a></li><li><a href="#outline-22">plugin.meta(opt)</a></li><li><a href="#plugin.href">plugin.href(opt)</a></li><li><a href="#plugin.img">plugin.img(opt)</a></li><li><a href="#outline-23">plugin.localize(opt)</a></li><li><a href="#outline-24">plugin.youtube(opt)</a></li><li><a href="#outline-25">plugin.disqus(opt)</a></li><li><a href="#outline-26">More Plugins</a></li></ul>
-</li><li><a href="#outline-27">Appendix</a><ul class="nav"><li><a href="#outline-28">License</a></li><a href="#top" class="back-to-top"> Back to top </a></ul></li></ul></nav></div>
-    </div>
-</div>
-
+<li><code>selector</code> defining the containers where the code should be added to (Default <code>.disqus</code>)</li> 
+<li><code>disqusURL</code> is the JS code URL provided by disqus to be used <a href="https://disqus.com/admin/install/platforms/universalcode/">for embedding</a> </li> 
+</ul> 
+<h2 data-anchor="outline-27"><a id="outline-27" name="outline-27" class="anchor" href="#outline-27">Appendix</a></h2> 
+<h3 data-anchor="outline-28"><a id="outline-28" name="outline-28" class="anchor" href="#outline-28">License</a></h3> 
+<p>The project is licensed under AGPLv3. If you need a commercial license, please get in <a href="https://holtwick.de/support">contact with me</a>.</p> 
+</div> 
+</div> 
+        </div> 
+        <div class="col-sm-1">&#xA0;</div> 
+        <div class="col-sm-3" id="sidebar"><nav id="outline" class="bs-docs-sidebar hidden-print hidden-sm hidden-xs" data-spy="affix" data-offset-top="68"><ul class="nav"><li><a href="#outline-1">Introduction</a></li> 
+<li><a href="#outline-2">Getting Started</a></li> 
+<li><a href="#outline-3">Basic Concepts</a><ul class="nav"><li><a href="#paths">Paths</a></li> 
+<li><a href="#patterns">Patterns</a></li> 
+<li><a href="#dom">DOM</a></li> 
+<li><a href="#outline-4">JSX</a></li> 
+<li><a href="#outline-5">Markdown</a></li> 
+</ul> 
+</li> 
+<li><a href="#site">Site</a><ul class="nav"><li><a href="#outline-6">site.handle(pattern, fn)</a></li> 
+<li><a href="#outline-7">site.copy(from, to)</a></li> 
+<li><a href="#outline-8">site.move(from, to)</a></li> 
+<li><a href="#outline-9">site.remove(pattern)</a></li> 
+<li><a href="#outline-10">site.read(path)</a></li> 
+<li><a href="#outline-11">site.write(path, data)</a></li> 
+<li><a href="#outline-12">site.paths(pattern, excludePattern):paths</a></li> 
+<li><a href="#outline-13">site.url(path):url</a></li> 
+<li><a href="#publicURL">site.publicURL(path):url</a></li> 
+<li><a href="#outline-14">site.copyNPM(module, relativePath, toSitePath)</a></li> 
+<li><a href="#outline-15">site.log</a></li> 
+</ul> 
+</li> 
+<li><a href="#tasks">Tasks</a><ul class="nav"><li><a href="#taskhandle">task.handle(site, options)</a></li> 
+<li><a href="#outline-16">task.html(site, options)</a></li> 
+<li><a href="#outline-17">task.markdown(site, options)</a></li> 
+<li><a href="#outline-18">task.blog(site, options)</a></li> 
+<li><a href="#outline-19">task.sitemap(site, options)</a></li> 
+<li><a href="#outline-20">task.release(site, options)</a></li> 
+</ul> 
+</li> 
+<li><a href="#plugins">Plugins</a><ul class="nav"><li><a href="#outline-21">plugin.bestPractice()</a></li> 
+<li><a href="#outline-22">plugin.googleAnalytics(key)</a></li> 
+<li><a href="#outline-23">plugin.meta(opt)</a></li> 
+<li><a href="#plugin.href">plugin.href(opt)</a></li> 
+<li><a href="#plugin.img">plugin.img(opt)</a></li> 
+<li><a href="#outline-24">plugin.localize(opt)</a></li> 
+<li><a href="#plugin.tidy">plugin.tidy(opt)</a></li> 
+<li><a href="#outline-25">plugin.youtube(opt)</a></li> 
+<li><a href="#outline-26">plugin.disqus(opt)</a></li> 
+</ul> 
+</li> 
+<li><a href="#outline-27">Appendix</a><ul class="nav"><li><a href="#outline-28">License</a></li> 
+<a href="#top" class="back-to-top"> Back to top </a></ul> 
+</li> 
+</ul> 
+</nav></div> 
+    </div> 
+</div> 
 <footer class="blog-footer">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <hr>
+                <hr> 
                 <p>
                     <a href="#top" class="pull-right">Back to top</a>
                     <a href="imprint.html">Imprint</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script src="lib.min.js" async></script>
+                </p> 
+            </div> 
+        </div> 
+    </div> 
+</footer> 
+<script src="lib.min.js" async> 
+</script>
 
 
 <script> 

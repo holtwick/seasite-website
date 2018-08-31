@@ -1,23 +1,23 @@
 <!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8"> 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SeaSite - Static websites the jQuery way</title>
 
-    <link href="../custom.css" rel="stylesheet" media="all"> 
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/png"> 
-    <link rel="icon" type="image/png" href="../img/favicon-32.png" sizes="32x32"> 
-    <link rel="icon" type="image/png" href="../img/favicon-96.png" sizes="96x96"> 
-    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png"> 
-    <link rel="alternate" type="application/rss+xml" title="Blog of Dirk Holtwick" href="../atom.xml"> 
-<meta name="keywords" property="og:keywords" content="jquery, website, static, cheerio, generator, nodejs, javascript, es6, seasite, server"> 
-<link rel="canonical" href="https://holtwick.github.io/seasite-website/seasite-website/blog/static-jquery.html"> 
-<meta property="og:url" content="https://holtwick.github.io/seasite-website/seasite-website/blog/static-jquery.html"> 
-<meta property="og:title" content="SeaSite - Static websites the jQuery way"> 
-<meta name="twitter:creator" content="@holtwick"> 
-<meta name="twitter:card" content="summary"> 
-<meta name="generator" content="SeaSite, https://github.com/holtwick/seasite/"> 
-<meta property="og:type" content="website"> 
+    <link href="../custom.css" rel="stylesheet" media="all">
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
+    <link rel="icon" type="image/png" href="../img/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../img/favicon-96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="Blog of Dirk Holtwick" href="../atom.xml">
+<meta name="keywords" property="og:keywords" content="jquery, website, static, cheerio, generator, nodejs, javascript, es6, seasite, server">
+<link rel="canonical" href="https://holtwick.github.io/seasite-website/seasite-website/blog/static-jquery.html">
+<meta property="og:url" content="https://holtwick.github.io/seasite-website/seasite-website/blog/static-jquery.html">
+<meta property="og:title" content="SeaSite - Static websites the jQuery way">
+<meta name="twitter:creator" content="@holtwick">
+<meta name="twitter:card" content="summary">
+<meta name="generator" content="SeaSite, https://github.com/holtwick/seasite/">
+<meta property="og:type" content="website">
 </head>
 
 <body>
@@ -32,18 +32,18 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand logo" href="../index.html">
-                <img alt="Brand" src="../img/logo.png" height="28"> 
+                <img alt="Brand" src="../img/logo.png" height="28">
             </a>
-        </div> 
+        </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav -navbar-right">
-                <li data-group="index"><a href="../index.html">SeaSite</a></li> 
-                <li data-group="blog" class="active"><a href="/blog/">Blog</a></li> 
-                <li data-group="product"><a href="../products.html">Examples</a></li> 
-                <li data-group="docs"><a href="../docs.html">Documentation</a></li> 
-            </ul> 
-        </div> 
-    </div> 
+                <li data-group="index"><a href="../index.html">SeaSite</a></li>
+                <li data-group="blog" class="active"><a href="/blog/">Blog</a></li>
+                <li data-group="product"><a href="../products.html">Examples</a></li>
+                <li data-group="docs"><a href="../docs.html">Documentation</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
 
 <div class="container">
@@ -51,11 +51,11 @@
 
         <div class="col-sm-8 blog-main">
 
-            <div class="post blog-post" id="content"><div><h1 class="blog-post-title">Static websites the jQuery way</h1> 
-<p class="blog-post-meta">December 30, 2017</p> 
-<p><strong>This blog and website consists of static pages created using a practical technique that I would like to introduce in this article.</strong></p> 
-<p><strong>Update 2018-02-15:</strong> The project described here can be <a href="https://github.com/holtwick/seasite">downloaded from GitHub</a> now.</p> 
-<p>The special thing about this is that a large part of this website generator consists of programming patterns, which are also used in dynamic websites via jQuery. A simple example says more than a thousand words:</p> 
+            <div class="post blog-post" id="content"><div><h1 class="blog-post-title">Static websites the jQuery way</h1>
+<p class="blog-post-meta">December 30, 2017</p>
+<p><strong>This blog and website consists of static pages created using a practical technique that I would like to introduce in this article.</strong></p>
+<p><strong>Update 2018-02-15:</strong> The project described here can be <a href="https://github.com/holtwick/seasite">downloaded from GitHub</a> now.</p>
+<p>The special thing about this is that a large part of this website generator consists of programming patterns, which are also used in dynamic websites via jQuery. A simple example says more than a thousand words:</p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> site = SeaSite(
   <span class="hljs-string">&apos;public&apos;</span>,      <span class="hljs-comment">// Source folder</span>
   <span class="hljs-string">&apos;dist&apos;</span>)        <span class="hljs-comment">// Destination folder</span>
@@ -63,9 +63,9 @@
 site.handle(<span class="hljs-string">&apos;index.html&apos;</span>, $ =&gt; {
   $(<span class="hljs-string">&apos;title&apos;</span>).text(<span class="hljs-string">&apos;New Title&apos;</span>)
 })</code></pre>
-<p>This example creates the <code>site</code> object with the source directory <code>public</code> and the target directory <code>dist</code>. In the first step, the content of the source directory is cloned into the target directory. The next step is to edit the file <code>index.html</code>. The help function gets the variable <code>$</code> known from jQuery and sets the content of the <code>title</code> element to <code>New Title</code>. The modified content is saved automatically by the framework.</p> 
-<h2>File patterns and templating</h2> 
-<p>From here it is easy to build more complex websites with a few lines of code:</p> 
+<p>This example creates the <code>site</code> object with the source directory <code>public</code> and the target directory <code>dist</code>. In the first step, the content of the source directory is cloned into the target directory. The next step is to edit the file <code>index.html</code>. The help function gets the variable <code>$</code> known from jQuery and sets the content of the <code>title</code> element to <code>New Title</code>. The modified content is saved automatically by the framework.</p>
+<h2>File patterns and templating</h2>
+<p>From here it is easy to build more complex websites with a few lines of code:</p>
 <pre><code class="lang-js">site.handle(<span class="hljs-regexp">/.*\.md/</span>, (content, path) =&gt; {
    <span class="hljs-keyword">let</span> $ = site.readDOM(<span class="hljs-string">&apos;template.html&apos;</span>)
    <span class="hljs-keyword">let</span> htmlPath = path.replace(<span class="hljs-regexp">/\.md$/</span>, <span class="hljs-string">&apos;.html&apos;</span>)
@@ -76,7 +76,7 @@ site.handle(<span class="hljs-string">&apos;index.html&apos;</span>, $ =&gt; {
    $(<span class="hljs-string">&apos;#content&apos;</span>).html(md.html)
    site.write(htmlPath, $.html())
 })</code></pre>
-<p><strong>template.html</strong>:</p> 
+<p><strong>template.html</strong>:</p>
 <pre><code class="lang-html"><span class="hljs-meta">&lt;!doctype html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Template<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
@@ -87,19 +87,19 @@ site.handle(<span class="hljs-string">&apos;index.html&apos;</span>, $ =&gt; {
     Content
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
-<p><strong>hello-world.md</strong>:</p> 
+<p><strong>hello-world.md</strong>:</p>
 <pre><code class="lang-markdown">---
 <span class="hljs-section">title: Hello World
 ---</span>
 
 Lorem <span class="hljs-strong">**ipsum**</span></code></pre>
-<p>This example uses a <strong>file pattern</strong> to find all Markdown files in the site&apos;s source folder. As you may notice,  this time we get a plain string instead of the DOM object from the previous example. This is because DOM objects are only generated from <code>html</code> and <code>xml</code> files, otherwise a <strong>string</strong> is returned.</p> 
-<p>We then directly create a new DOM object from the  <code>template.html</code> file. There we set the content of the <code>title</code> element as well as for the DOM element with the ID <code>#title</code>. The title is extracted from the Markdown file, where we could put even more properties like e.g. language, description, keywords.</p> 
-<p>The Markdown parser &quot;<a href="https://github.com/chjj/marked">marked</a>&quot; we use, converts the contents to an HTML string we can pass to the <code>#content</code> element in out template.</p> 
-<p>The last step is to write the file with a <code>.html</code> suffix. We don&apos;t need the Markdown files anymore and could clean up by calling <code>site.remove(/.*\.md/)</code>.</p> 
-<p>This little script will be applied to all Markdown files in the site&apos;s source folder, so you can quickly build up a site with easy to create content. The CSS selectors are super powerful and changing other aspects of the page is super simple and intuitive.</p> 
-<h3>Static JSX</h3> 
-<p>But it doesn&apos;t stop here, let&apos;s push it a bit further! Lets use JSX to generate portions of HTML that need to be even more flexible. Let&apos;s imagine we want to create an index of all Markdown files we converted in the previous example:</p> 
+<p>This example uses a <strong>file pattern</strong> to find all Markdown files in the site&apos;s source folder. As you may notice,  this time we get a plain string instead of the DOM object from the previous example. This is because DOM objects are only generated from <code>html</code> and <code>xml</code> files, otherwise a <strong>string</strong> is returned.</p>
+<p>We then directly create a new DOM object from the  <code>template.html</code> file. There we set the content of the <code>title</code> element as well as for the DOM element with the ID <code>#title</code>. The title is extracted from the Markdown file, where we could put even more properties like e.g. language, description, keywords.</p>
+<p>The Markdown parser &quot;<a href="https://github.com/chjj/marked">marked</a>&quot; we use, converts the contents to an HTML string we can pass to the <code>#content</code> element in out template.</p>
+<p>The last step is to write the file with a <code>.html</code> suffix. We don&apos;t need the Markdown files anymore and could clean up by calling <code>site.remove(/.*\.md/)</code>.</p>
+<p>This little script will be applied to all Markdown files in the site&apos;s source folder, so you can quickly build up a site with easy to create content. The CSS selectors are super powerful and changing other aspects of the page is super simple and intuitive.</p>
+<h3>Static JSX</h3>
+<p>But it doesn&apos;t stop here, let&apos;s push it a bit further! Lets use JSX to generate portions of HTML that need to be even more flexible. Let&apos;s imagine we want to create an index of all Markdown files we converted in the previous example:</p>
 <pre><code class="lang-jsx"><span class="hljs-keyword">let</span> pages = []
 
 site.handle(<span class="hljs-regexp">/.*\.md/</span>, (content, path) =&gt; {
@@ -113,53 +113,53 @@ site.handle(<span class="hljs-string">&apos;index.html&apos;</span>, $ =&gt; {
       {pages.map(page =&gt; <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">{page.htmlPath}</span>&gt;</span>{title}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>)}
     <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>)
 })</code></pre>
-<p>We enhanced the previous example by collecting page info in the <code>pages</code> variable. After all Markdown pages are processed the links should be added to the <code>index.html</code> file. We use JSX to create a simple list with links. This is the same code you would use in a React JS project, but of course this is a custom JSX generator, which creates an HTML string form the JSX code.</p> 
-<p>This way you don&apos;t need any complex templating language in the HTML file itself to get things done.</p> 
-<h2>The technology</h2> 
-<p>All this is made possible by the awesome <a href="static-jquery.md">cheerio</a> project, which is driving the DOM and jQuery like part. The API is covering everything you&apos;ll need to manipulate the HTML and XML files.</p> 
-<p>The rest is mostly custom code which I&apos;ll be happy to open source if there is interest. Drop me a line via the <a href="../support.html">support form</a> or at <a href="https://twitter.com/holtwick">Twitter</a>.</p> 
-</div> 
-</div> 
-        </div> 
-        <div class="col-sm-1">&#xA0;</div> 
+<p>We enhanced the previous example by collecting page info in the <code>pages</code> variable. After all Markdown pages are processed the links should be added to the <code>index.html</code> file. We use JSX to create a simple list with links. This is the same code you would use in a React JS project, but of course this is a custom JSX generator, which creates an HTML string form the JSX code.</p>
+<p>This way you don&apos;t need any complex templating language in the HTML file itself to get things done.</p>
+<h2>The technology</h2>
+<p>All this is made possible by the awesome <a href="static-jquery.md">cheerio</a> project, which is driving the DOM and jQuery like part. The API is covering everything you&apos;ll need to manipulate the HTML and XML files.</p>
+<p>The rest is mostly custom code which I&apos;ll be happy to open source if there is interest. Drop me a line via the <a href="../support.html">support form</a> or at <a href="https://twitter.com/holtwick">Twitter</a>.</p>
+</div>
+</div>
+        </div>
+        <div class="col-sm-1">&#xA0;</div>
         <div class="col-sm-3" id="sidebar">
             <div class="sidebar">
                 <div class="sidebar-module recent-posts" id="recent-posts-container">
-                    <h4>Recent Posts</h4> 
-                    <ol class="list-unstyled" id="recent-posts"></ol> 
-                </div> 
+                    <h4>Recent Posts</h4>
+                    <ol class="list-unstyled" id="recent-posts"></ol>
+                </div>
                 <div class="sidebar-module">
-                    <h4>Links</h4> 
+                    <h4>Links</h4>
                     <ol class="list-unstyled">
-                        <li><a target="_blank" href="https://github.com/holtwick" rel="noopener">GitHub</a></li> 
-                        <li><a target="_blank" href="https://twitter.com/holtwick" rel="noopener">Twitter</a></li> 
+                        <li><a target="_blank" href="https://github.com/holtwick" rel="noopener">GitHub</a></li>
+                        <li><a target="_blank" href="https://twitter.com/holtwick" rel="noopener">Twitter</a></li>
                         <li><a target="_blank" href="https://www.linkedin.com/in/holtwick/" rel="noopener">LinkedIn</a> /
-                            <a target="_blank" href="https://www.xing.com/profile/Dirk_Holtwick/cv" rel="noopener">XING</a></li> 
-                        <li><a target="_blank" href="../atom.xml" rel="noopener">RSS</a></li> 
-                    </ol> 
-                </div> 
-            </div> 
-        </div> 
-    </div> 
-</div> 
+                            <a target="_blank" href="https://www.xing.com/profile/Dirk_Holtwick/cv" rel="noopener">XING</a></li>
+                        <li><a target="_blank" href="../atom.xml" rel="noopener">RSS</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <footer class="blog-footer">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <hr> 
+                <hr>
                 <p>
                     <a href="#top" class="pull-right">Back to top</a>
                     <a href="../imprint.html">Imprint</a>
-                </p> 
-            </div> 
-        </div> 
-    </div> 
-</footer> 
-<script src="../lib.min.js" async> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="../lib.min.js" async>
 </script>
 
 
-<script> 
+<script>
 var disableStr = 'ga-disable-UA-261158-1';
 
 function gaOptout() {
